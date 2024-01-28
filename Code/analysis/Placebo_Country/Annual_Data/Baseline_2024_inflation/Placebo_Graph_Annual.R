@@ -1,0 +1,232 @@
+####################################################################################
+# Article: The real winners and losers of the Euro
+# Authors: Ricardo Gabriel and Sofia Pessoa
+# Code adapted from: Vitor Possebom (and Sergio Firpo) - Synthetic Control 
+#               Estimator A Generalzied Inference Procedure and Confidence Sets
+#
+# Goal: Analyzing the economic impact of the Euro in the Eurozone Countries, we
+#       test the null hypothesis of no effect whatsover using the the RMSPE.
+#       We also save the estimated squared gaps in order to analyze the timing
+#       of this effect. The weights obtained for the treated countries are close
+#       to the ones computed using Stata - we use the same specifications, but
+#       fail to understand why the match for some countries is different. 
+#       Nevertheless, the results are virtually the same as one can see when
+#       analyzing figure 1 and the doppelganger differences produced using this code.
+####################################################################################
+
+
+
+
+# Clean and organize the work environment
+rm(list = ls())
+library("Synth")
+library(foreign)
+library(dplyr)
+library(haven)
+
+###############################################################################
+# Estimate the intervention effects for each Eurozone country and assign a
+# placebo treatment to all countries in the donor pool.
+# In this exercise, we keep each treated unit in the donor pool of the placebo
+# units:  from 15 to 26
+for (h in c(15:26)) {
+
+# Create matrices that will store our results.
+# Number of time periods of full sample (1970:2007)
+periods_no <- 38
+# Number of regions/countries in each analysis (15 donors units + 1 treated unit)
+countries_no <- 15
+# Number of donor countries
+donor_no <- 14
+# Treatment period (1999-1970+1=30) (32 for Greece)
+treatment_period <- 30
+treatment_year <- 1999-1
+
+
+Y <- matrix(NA, periods_no, countries_no)
+ecf <- matrix(NA, periods_no, countries_no)
+gaps <- matrix(NA, periods_no, countries_no)
+gapssq <- matrix(NA, periods_no, countries_no)
+tstat <- matrix(NA, 1, countries_no)
+pre_mspe <- matrix(NA, 1, countries_no)
+rmspe <- matrix(NA, 1, countries_no)
+weights <- matrix(NA, donor_no, countries_no)
+  
+  # Download the data set:  
+  data <- read.dta("C:/Users/ricar/Dropbox/Apps/GitHub/Adopting-the-Euro-SCM/Data/Analysis_Annual_12.dta")
+
+  
+  if (h > 15) {
+    data<-data[!(data$id_placebo==15),]
+    data$id_placebo[data$id_placebo == h]  <- 15
+  } 
+  
+  if (h==20) {
+    #Greece has a different treatment period
+    treatment_period <- 32
+    treatment_year <- 2001-1
+  }
+
+  data <- subset.data.frame(data,data$id_placebo<16)
+  
+for (j in c(1:15)){
+  # Define the comparison regions (setdiff excludes one h from the vector)
+  controlunits <- setdiff(c(1:15), j)
+  
+  # Prepare the data in order to use the synthetic control estimator
+  dataprep.out <- dataprep(
+    foo = data,
+    predictors = c("normgdp_s", "csh_c", "csh_i", "csh_g",
+                   "csh_x", "csh_m", "csh_emp", "csh_prod", "inflation"),
+    predictors.op = "mean",
+    time.predictors.prior = seq(from = 1970, to = treatment_year, by = 1),
+    special.predictors = list(
+      list("normgdp_s", seq(from = 1971, to = 1972, by = 1), "mean"),
+      list("normgdp_s", seq(from = 1972, to = 1973, by = 1), "mean"),
+      list("normgdp_s", seq(from = 1973, to = 1974, by = 1), "mean"),
+      list("normgdp_s", seq(from = 1974, to = 1975, by = 1), "mean"),
+      list("normgdp_s", seq(from = 1975, to = 1976, by = 1), "mean"),
+      list("normgdp_s", seq(from = 1976, to = 1977, by = 1), "mean"),
+      list("normgdp_s", seq(from = 1977, to = 1978, by = 1), "mean"),
+      list("normgdp_s", seq(from = 1978, to = 1979, by = 1), "mean"),
+      list("normgdp_s", seq(from = 1979, to = 1980, by = 1), "mean"),
+      list("normgdp_s", seq(from = 1980, to = 1981, by = 1), "mean"),
+      list("normgdp_s", seq(from = 1981, to = 1982, by = 1), "mean"),
+      list("normgdp_s", seq(from = 1982, to = 1983, by = 1), "mean"),
+      list("normgdp_s", seq(from = 1983, to = 1984, by = 1), "mean"),
+      list("normgdp_s", seq(from = 1984, to = 1985, by = 1), "mean"),
+      list("normgdp_s", seq(from = 1985, to = 1986, by = 1), "mean"),
+      list("normgdp_s", seq(from = 1986, to = 1987, by = 1), "mean"),
+      list("normgdp_s", seq(from = 1987, to = 1988, by = 1), "mean"),
+      list("normgdp_s", seq(from = 1988, to = 1989, by = 1), "mean"),
+      list("normgdp_s", seq(from = 1989, to = 1990, by = 1), "mean"),
+      list("normgdp_s", seq(from = 1990, to = 1991, by = 1), "mean"),
+      list("normgdp_s", seq(from = 1991, to = 1992, by = 1), "mean"),
+      list("normgdp_s", seq(from = 1992, to = 1993, by = 1), "mean"),
+      list("normgdp_s", seq(from = 1993, to = 1994, by = 1), "mean"),
+      list("normgdp_s", seq(from = 1994, to = 1995, by = 1), "mean"),
+      list("normgdp_s", seq(from = 1995, to = 1996, by = 1), "mean"),
+      list("normgdp_s", seq(from = 1996, to = 1997, by = 1), "mean"),
+      list("normgdp_s", seq(from = 1997, to = 1998, by = 1), "mean"),
+      list("normgdp_s", seq(from = 1998, to = 1999, by = 1), "mean")),
+    dependent = "normgdp_s",
+    unit.variable = "id_placebo",
+    unit.names.variable = "country",
+    time.variable = "year",
+    treatment.identifier = j,
+    controls.identifier = controlunits,
+    time.optimize.ssr = seq(from = 1970, to = treatment_year, by = 1),
+    time.plot = seq(from = 1970, to = 2007, by = 1))
+  
+  #Be careful with donor countries that can't be matched in 1998 and 1999:
+  # if ((j==9 & h==21) | (j==11 & h==23) | (j==12 & (h==17 | h==18))) {
+  #   # Prepare the data in order to use the synthetic control estimator
+  #   dataprep.out <- dataprep(
+  #     foo = data,
+  #     predictors = c("csh_c", "csh_i",
+  #                    "csh_nx", "csh_emp", "csh_prod"),
+  #     predictors.op = "mean",
+  #     time.predictors.prior = seq(from = 1970, to = treatment_year, by = 1),
+  #     special.predictors = list(
+  #       list("normgdp_s", seq(from = 1970, to =1997, by = 1), "mean")),
+  #     dependent = "normgdp_s",
+  #     unit.variable = "id_placebo",
+  #     unit.names.variable = "country",
+  #     time.variable = "year",
+  #     treatment.identifier = j,
+  #     controls.identifier = controlunits,
+  #     time.optimize.ssr = seq(from = 1970, to = treatment_year, by = 1),
+  #     time.plot = seq(from = 1970, to = 2007, by = 1))
+  # } 
+  
+  # Estimating the synthetic control method
+  synth.out <- synth(data.prep.obj = dataprep.out, optimxmethod = "All")
+  
+  # Saving the statistics that we will use in our inference procedure
+  Y[ , (j)] <- dataprep.out$Y1plot
+  
+  weights[ , (j)] <- synth.out$solution.w
+  ecf[ , (j)] <- dataprep.out$Y0plot %*% synth.out$solution.w
+  gaps[ , (j)] <- dataprep.out$Y1plot - ecf[ , (j)]
+  gapssq[ , (j)] <- gaps[ , (j)]^2
+  ttest <- t.test(x = matrix(0, (periods_no-treatment_period+1), 1),
+                  y = gaps[treatment_period:periods_no, (j)],
+                  alternative = "two.sided",
+                  mu = 0,
+                  paired = TRUE,
+                  VAR.EQUAL = FALSE)
+  tstat[ , (j)] <- as.matrix(ttest$statistic)
+  post <- (t(gaps[(treatment_period):(periods_no), (j)]) %*% gaps[(treatment_period):(periods_no), (j)])/(periods_no-treatment_period+1)
+  pre <- (t(gaps[1:(treatment_period-1), (j)]) %*% gaps[1:(treatment_period-1), (j)])/(treatment_period-1)
+  pre_mspe[ , (j)] <- pre
+  post <- sqrt(post)
+  pre <- sqrt(pre)
+  rmspe[ , (j)] <- post/pre
+}
+  
+  ##############################################################################
+  # Plot the placebo results with all control units.
+  pdf(paste("graph_placebo_effects_",h,".pdf",sep=""), width = 11, height = 8.5)
+  par(mar = c(3, 5, 1, 1))
+  par(oma = c(0.1, 0.1, 0.1, 0.1))
+  plot(seq(from = 1970, to = 2007, by = 1), gaps[, 1],
+       t = "l", col = "gray70", lwd = 2, cex = 2, cex.axis=1.5,
+       ylab = " ", #Gap in Normalized Real per-capita GDP \n (Million of 2011 USD)",
+       xlab = "Year", xaxs = "i", yaxs = "i", ylim = c(-1, 1))
+  # What to put in this loop
+  for (j in c(2:14)) {
+    lines(seq(from = 1970, to = 2007, by = 1), gaps[, j],
+          col = "gray70", lty = "solid", lwd = 2, cex = 2)
+  }
+  lines(seq(from = 1970, to = 2007, by = 1), gaps[, 15],
+        col = "black", lwd = 2)
+  abline(v = (treatment_year + 0.5), lty = "dotted")
+  abline(h = 0, lty = "dotted")
+  dev.off()
+  
+  # Save the gaps
+  write.csv(gaps, paste("placebo_gaps_",h,".csv",sep=""))
+  write.csv(gapssq, paste("placebo_gapssq_",h,".csv",sep=""))
+  
+  # Save the test statistics
+  #write.csv(tstat, paste("placebo_tstat_",h,".csv",sep=""))
+  write.csv(rmspe, paste("placebo_rmspe_",h,".csv",sep=""))
+  write.csv(pre, paste("placebo_pre_",h,".csv",sep=""))
+  
+  write.csv(weights, paste("placebo_weights_",h,".csv",sep=""))
+
+  # Plot the placebo results without the control units whose pre-treatment
+  # MSPE is 5 times greater than the treated unit.
+  roww <- c(weights[,1],1)
+  drop <- as.vector(which(pre_mspe > 4*pre_mspe[1, 15]))
+  keep <- setdiff(c(1:14), drop)
+  pdf(paste("graph_placebo_effects_excluding_outliers_",h,".pdf",sep=""), width = 11, height = 8.5)
+  par(mar = c(3, 5, 1, 1))
+  par(oma = c(0.1, 0.1, 0.1, 0.1))
+  plot(seq(from = 1970, to = 2007, by = 1), gaps[, 15],
+       t = "l", col = "gray70", lwd = 2, cex = 2,  cex.axis=1.5,
+       ylab = " ", #ylab = "Gap in Normalized Real per-capita GDP \n (Million of 2011 USD)",
+       xlab = "Year", xaxs = "i", yaxs = "i", ylim = c(-1, 1))
+  for (j in keep) {
+    lines(seq(from = 1970, to = 2007, by = 1), gaps[, j],
+          col = "gray70", lty = "solid", lwd = 2, cex = 2)
+  }
+  lines(seq(from = 1970, to = 2007, by = 1), gaps[, 15],
+        col = "black", lwd = 2)
+  abline(v = (treatment_year + 0.5), lty = "dotted")
+  abline(h = 0, lty = "dotted")
+  dev.off()
+  index <- c(1, keep, 15)
+  index <- index[sort.list(index)]
+  
+  # Save the gaps
+  write.csv(gaps[1, index], paste("placebo_gaps_no_outlier_",h,".csv",sep=""))
+  write.csv(gapssq[1, index], paste("placebo_gapssq_no_outlier_",h,".csv",sep=""))
+  
+  # Save the test statistics
+  #write.csv(tstat[1, index], "placebo_tstat_no_outlier.csv")
+  write.csv(rmspe[index], paste("placebo_rmspe_no_outlier_",h,".csv",sep=""))
+  
+}
+##############################################################################
+
