@@ -59,7 +59,7 @@ do 6_Graphs_Other
 */
 
 
-/*
+
 
 * Leave countries out of the donor pool placebo
 global treatment_choice = 1999
@@ -75,10 +75,10 @@ global remove_3
 global remove_nr = 2
 
 do Paths
-*do 0_Data_Management_Annual
+do 0_Data_Management_Annual
 do 1_SCM_Annual
 do 2_Aggregation_Annual
-do 6_Graphs_Annual
+do 6_Graphs_Other
 
 */
 
@@ -148,9 +148,7 @@ restore
 */
 
 
-
-* Figure 8
-
+/*
 * Referee Check - Maastricht Treaty decomposition - change global end to 1999
 global treatment_choice = 1992
 global treatment_GRC_choice = 1992
