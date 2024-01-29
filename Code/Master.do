@@ -13,7 +13,8 @@ global end_choice = 2007
 /*
 * Baseline Results
 * Figure 1, Figure 7 (Weights_Decomposition.tex)
-* Table 1 (Weights_Decomposition.tex), Table A.3 (Weights_Annual.tex), 
+* Table 1 (Weights_Decomposition.tex), 
+* Table A.2 (Comp_Annual.tex); Table A.3 (Weights_Annual.tex), 
 * Table A.6 (Weights_Decomposition.tex); Table A.7 (Net_Exports__Decomposition.tex)
 * 
 global treatment_choice = 1999
@@ -38,6 +39,7 @@ do 5_Graphs_Annual
 
 */
 
+/*
 * In-time placebo test
 * Figure 2 (and any other where the end of sample is 2007 and treatment date 
 * is between 1972 and 2006)
@@ -145,7 +147,7 @@ restore
 
 */
 
-/*
+
 
 * Figure 8
 

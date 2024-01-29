@@ -258,7 +258,7 @@ if (code=="GRC") {
 	gen fup=$outcomecg +std
 	gen flow=$outcomecg -std
 	*draw figure
-	twoway (rarea fup flow date if id== `x', color(gs13)) (line $outcomecg $outcome date if id == `x', lwidth(thick ..)  legend(off) ylabel(0(100)500) xtitle(" ") ti("`s'") lcolor(blue) lpa("-") tline($treatment_GRC, lcolor(gray)) tlabel("$begin"(6)"$end"))
+	twoway (rarea fup flow date if id== `x', color(gs13)) (line $outcomecg $outcome date if id == `x', lwidth(thick ..)  legend(off) ylabel(0(100)500) xtitle(" ") ti("`s'") lcolor(blue) lpa("-") tline($treatment_GRC, lcolor(gray)) tline(1999, lpattern("-") lcolor(gray)) tlabel("$begin"(6)"$end"))
 }
 else {
 	*get standard deviation (in percent)
@@ -277,7 +277,7 @@ else {
 	gen fup=$outcomecg +std
 	gen flow=$outcomecg -std
 	*draw figure
-	twoway (rarea fup flow date if id== `x', color(gs13)) (line $outcomecg $outcome date if id == `x', lwidth(thick ..)  legend(off) ylabel(0(100)500) xtitle(" ") ti("`s'") lcolor(blue) lpa("-") tline($treatment, lcolor(gray)) tlabel("$begin"(6)"$end"))
+	twoway (rarea fup flow date if id== `x', color(gs13)) (line $outcomecg $outcome date if id == `x', lwidth(thick ..)  legend(off) ylabel(0(100)500) xtitle(" ") ti("`s'") lcolor(blue) lpa("-") tline($treatment, lcolor(gray)) tline(1999, lpattern("-") lcolor(gray)) tlabel("$begin"(6)"$end"))
 }
 graph save "${Fig}Auxi\SCM_gdp_`x'_Annual.gph", replace
 

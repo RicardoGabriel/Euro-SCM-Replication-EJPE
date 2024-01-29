@@ -87,6 +87,8 @@ merge 1:1 year country using "$Data\Source_Annual\Arvai_Gabriel_inflation_bonds.
 drop if _merge == 2
 drop _merge
 
+
+
 rename c code
 replace country ="Korea"  if country=="Republic of Korea"
 save "${Data}Data_Management_Annual_WB", replace

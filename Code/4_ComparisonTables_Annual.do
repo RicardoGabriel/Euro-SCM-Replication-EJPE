@@ -65,6 +65,9 @@ $covariates "France" $covariates "Germany" $covariates "Greece" $covariates ///
 local c = 1
 foreach var in $covariates{
 	replace `var' = `var'*100
+	if `var' == "inflation" {
+		replace inflation = inflation/100
+	}
 	sum `var' if id==1 & year <= 1998
 	matrix comp[`r',`c']=r(mean)
 	local r = `r' + 1
@@ -76,6 +79,9 @@ local c = 2
 local r = `r' - $number_covariates
 foreach var in $covariatescg{
 	replace `var' = `var'*100
+	if `var' == "inflationcg" {
+		replace inflationcg = inflationcg/100
+	}
 	sum `var' if id==1 & year <= 1998
 	matrix comp[`r',`c']=r(mean)
 	local r = `r' + 1
@@ -85,5 +91,6 @@ local r = `r' + 1
 }
 
 label var csh_c "Share of Priv. Consumption"
+label var inflation "Inflation Rate"
 *save the table as tex document
 outtable using "${Tab}Comp_Annual", mat(comp) replace label nobox asis center nodots longtable f(%9.2f) caption("Predictors' means for each country")
