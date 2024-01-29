@@ -84,7 +84,12 @@ More recent work from \cite{Alesina2002} explains that forgoing monetary policy,
 
 There is also a broad literature that empirically tests these theoretical links. At about the time the euro was launched, \cite{Rose2000} famously estimated that a currency union could boost up to three times bilateral trade. The relevance of these results to the euro case was immediately doubted since the sample used for the analysis was based on unions of small, poor, and remote countries. \cite{Micco2003} developed the first comprehensive study for the impact of the European Monetary Union (EMU) on trade, concluding that the euro had a positive impact not only on trade between member states but also with third parties. Some papers have also highlighted the impact of currency unions on investment. Among others, \cite{Barr2003} suggest that inward investment in the countries outside the union would have been greater if they had joined the EMU. Furthermore, \cite{DeSousa2011} estimate that, in the Eurozone countries, investment increased with the single currency adoption.
 
-Finally, this paper closely relates to the recent literature about the euro adoption using the synthetic control approach \citep{Fernandez2015, Verstegen2017, Gasparotti2019}. We build directly on the work of \cite{Puzzello2018} by extending their analysis from six to the twelve member states that joined the Eurozone before 2007. This paper further adds to the existing literature by analysing the main drivers of the economic gains and losses of the euro accession. In particular, our results show that for the majority of Eurozone countries, adopting the euro spurred government consumption and trade while deterred investment and private consumption.
+Finally, this paper closely relates to the recent literature about the euro adoption using the synthetic control approach \citep{Fernandez2015, Verstegen2017, Gasparotti2019} but makes three important contributions. First, we build directly on the work of \cite{Puzzello2018} by extending their analysis from six to the twelve member states that joined the Eurozone before 2007. This contributes to a comprehensive picture of the macroeconomic effects of the Euro accession. 
+
+Second, this paper further adds to the existing literature by unpacking the results of the economic gains and losses of the euro accession. In particular, our results show that, for the majority of Eurozone countries, adopting the euro deterred investment and private consumption, but spurred trade and government consumption. There seems to be a negative link between fiscal spending before and after the Euro adoption. Most countries in the sample implemented spending-based austerity measures after the Maastricht Treaty in line with the Stability and Growth Pact (SGP) \citep{Alesina2019}. This has likely created fiscal space which together with access to cheaper credit promoted an increase in government consumption beyond what would have happened absent the Euro adoption. For the few countries that did not consolidate spending before the Euro accession. government consumption was lower than without the Euro.
+
+Third, this paper adds the drivers of Ireland's large economic gains following the Euro adoption. When extending the baseline analysis to the Gross National Income (GNI),  Ireland's economic gains from the Euro adoption, though still positive, become more modest. This means that the large Irish economic gains measured by GDP are closely related to the activities of these multinational corporations that contribute significantly more to GDP--through the production and services rendered within the country--than to GNI, as a large portion of their profits are repatriated to foreign investors or parent companies abroad. 
+
 
 The remainder of this paper is organized as follows. Section \ref{S_Doppelganger} describes the construction of the doppelganger, its implementation, and the data used. Section \ref{S_results} presents the results and robustness exercises. Section \ref{S_Components} explores the potential channels through which the euro adoption affected the GDP. We briefly conclude in Section \ref{S_Conclusion}.
 
@@ -113,9 +118,9 @@ The weights are chosen to minimize the difference between each treated unit and 
 
 Aiming to study the macroeconomic impact of the Euro accession, we use real GDP as the main outcome variable of this analysis. First, real GDP is one of the most important metrics to assess countries' degree of real convergence and economic growth. Second, it allows us to unpack the baseline result by studying how each GDP component changed after the Euro accession. \footnote{Using GDP per capita as the outcome variable yields similar results. See Figure \ref{F_normgdppc} in the appendix.} Following Born et al. (\citeyear{Born2018}, \citeyear{Born2019}), we normalize real GDP to unity in the first sample year, 1970. \footnote{Focusing on the normalized per capita real GDP instead does not qualitatively change the results.}  
 
-Moreover, the set of predictors used is based on \cite{Abadie2003} and \cite{Born2019}. These predictors are the average GDP shares of private consumption, government consumption, investment, exports, imports, the employed share of the population, the labor productivity growth, the real GDP and its lags.\footnote{We avoid the so-called cherry-picking problem in \cite{Ferman2017} by choosing a standard set of predictors based on previous empirical literature.}
+Moreover, the set of predictors used is based on \cite{Abadie2003} and \cite{Born2019}. These predictors are the average GDP shares of private consumption, government consumption, investment, exports, imports, the employed share of the population, the labor productivity growth, the inflation rate, the real GDP and its lags.\footnote{We avoid the so-called cherry-picking problem in \cite{Ferman2017} by choosing a standard set of predictors based on previous empirical literature.}
 
-Formally, let $\vec{x_1}$ denote the ($37 \times 1$) vector of $30$ observations for real GDP (including its 29 lags) and $7$ covariates' averages in each Eurozone country (over the pre-treatment period) and let $\vec{X_0}$ denote a ($37 \times 14$) matrix with observations from the donor countries. Finally, let $\vec{w}$ denote a ($14 \times 1$) vector of weights $w_i, \ i=2,...,15$. Then, the optimal weighting scheme is defined by $\vec{w^*}$ which minimizes the following mean squared error:
+Formally, let $\vec{x_1}$ denote the ($37 \times 1$) vector of $30$ observations for real GDP (including its 29 lags) and $8$ covariates' averages in each Eurozone country (over the pre-treatment period) and let $\vec{X_0}$ denote a ($38 \times 14$) matrix with observations from the donor countries. Finally, let $\vec{w}$ denote a ($14 \times 1$) vector of weights $w_i, \ i=2,...,15$. Then, the optimal weighting scheme is defined by $\vec{w^*}$ which minimizes the following mean squared error:
 
 \begin{equation}
     \label{EQ_min}
@@ -166,8 +171,6 @@ We use annual data from 1970 until 2007 from the the World Bank and the Penn Wor
 
 We assume the treatment date takes place in 1999 for all countries except for Greece, which joined the Eurozone later in 2001. In our baseline estimate, we have at least 29 pre-intervention periods, from 1970 to 1998, which is sufficiently large to apply the SCM.
 
-%Thus, we minimize equation \ref{EQ_min} over the pre-treatment period: from 1970 until 1998 (2000 for Greece) in our baseline specification. We allow for a possible effect of the treatment starting after the Eurozone accession by each country.
-
 Doppelgangers are constructed on the basis of a donor pool of 14 countries selected as follows. First, only OECD countries are used to ensure that doppelgangers are sufficiently similar to the treated countries. Then, all countries that joined the European Union or the Eurozone during the post-treatment period are excluded. This guarantees that the donor countries are neither affected by the treatment nor suffer a differentiated external shock during the post-treatment period. 
 
 For our baseline estimates, we do not restrict the donor pool further except for countries for which the necessary data is not available. The pool is composed of Australia, Canada, Chile, Denmark, Iceland, Israel, Korea, Mexico, New Zealand, Norway, Sweden, Switzerland, the United Kingdom, and the United States. 
@@ -190,7 +193,7 @@ Table \ref{TA_comp} shows that doppelgangers are very similar to the actual coun
     \centering
     \caption{The Impact of the Eurozone Accession}
     \includegraphics[scale=1.15]{SCM_gdp_Annual.pdf}
-    \annote{In each graph, the dashed line represents the normalized real GDP for the synthetic country and the continuous line represents the series for the actual country. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger prior to the euro accession. The vertical line represents the treatment period - 1999 for all countries except for Greece which is 2001. For each country, the analysis starts in 1970 and ends in 2007. %The baseline specification has as predictors labor productivity growth, employment share, and GDP shares from PENN Tables 9.1 data. OECD restricted donor pool.
+    \annote{In each graph, the dashed line represents the normalized real GDP for the synthetic country and the continuous line represents the series for the actual country. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger prior to the euro accession. The vertical line represents the treatment period - 1999 for all countries except for Greece which is 2001. For each country, the analysis starts in 1970 and ends in 2007.
     }
     \label{F_1}
 \end{figure}
@@ -537,7 +540,7 @@ This evidence points out the importance of analyzing in detail the heterogeneous
  csh\_i & Gross fixed capital formation (\% of GDP) & World Bank \\ \hline
  csh\_x & Exports of goods and services (\% of GDP) & World Bank \\ \hline
  csh\_m & Imports of goods and services (\% of GDP) & World Bank \\ \hline
- gnipc &  Gross national income per capita & World Bank \\
+ gnipc &  Gross national income per capita & World Bank \\ \hline
  inflation & Inflation rate (\%), Counsumer Price Index of All Commodities& IMF IFS \\ \hline
  Bonds & Long-Term Government Bond Yields, Percent per annum & \cite{Arvai2023} \\ \hline
  %unemp  & Unemployment Rate (\%)                    & World Bank \\ \hline
@@ -572,104 +575,116 @@ This evidence points out the importance of analyzing in detail the heterogeneous
 \endfoot
 \endlastfoot
 \textbf{Austria} &  &  \\  
-Share of Priv. Consumption &     56.27 &     51.57 \\  
-Share of Gov. Consumption &     17.91 &     20.58 \\  
-Share of Investment &     26.53 &     26.27 \\  
-Share of Imports &     32.57 &     32.35 \\  
-Share of Exports &     31.85 &     33.93 \\  
-Employment Share &     45.16 &     48.33 \\  
-Labor productivity growth &      2.47 &      2.07 \\  \hline
+Share of Priv. Consumption &     56.27 &     54.55 \\  
+Share of Investment &     26.53 &     26.01 \\  
+Share of Gov. Consumption &     17.91 &     17.39 \\  
+Share of Imports &     32.57 &     35.91 \\  
+Share of Exports &     31.85 &     33.86 \\  
+Employment Share &     45.16 &     48.26 \\  
+Labor productivity growth &      2.32 &      1.34 \\  
+Inflation Rate &      4.24 &      5.16 \\    \hline
 \textbf{Belgium} &  &  \\  
-Share of Priv. Consumption &     54.14 &     54.15 \\  
-Share of Gov. Consumption &     21.41 &     20.59 \\  
-Share of Investment &     22.87 &     24.74 \\  
-Share of Imports &     53.80 &     36.03 \\  
-Share of Exports &     55.39 &     36.55 \\  
-Employment Share &     38.01 &     49.41 \\  
-Labor productivity growth &      2.33 &      1.57 \\  \hline
+Share of Priv. Consumption &     54.14 &     54.45 \\  
+Share of Investment &     22.87 &     28.49 \\  
+Share of Gov. Consumption &     21.41 &     14.42 \\  
+Share of Imports &     53.80 &     41.32 \\  
+Share of Exports &     55.39 &     38.67 \\  
+Employment Share &     38.01 &     50.64 \\  
+Labor productivity growth &      2.19 &      1.46 \\  
+Inflation Rate &      4.85 &      4.84 \\  \hline
 \textbf{Finland} &  &  \\  
-Share of Priv. Consumption &     52.51 &     52.30 \\  
-Share of Gov. Consumption &     19.38 &     19.96 \\  
-Share of Investment &     26.66 &     26.54 \\  
-Share of Imports &     26.57 &     26.66 \\  
-Share of Exports &     28.02 &     27.86 \\  
-Employment Share &     47.26 &     47.22 \\  
-Labor productivity growth &      3.08 &      1.87 \\  \hline
+Share of Priv. Consumption &     52.51 &     53.92 \\  
+Share of Investment &     26.66 &     25.07 \\  
+Share of Gov. Consumption &     19.38 &     20.13 \\  
+Share of Imports &     26.57 &     27.70 \\  
+Share of Exports &     28.02 &     26.81 \\  
+Employment Share &     47.26 &     47.27 \\  
+Labor productivity growth &      2.99 &      2.04 \\  
+Inflation Rate &      6.73 &      6.72 \\    \hline
 \textbf{France} &  &  \\  
-Share of Priv. Consumption &     55.16 &     56.10 \\  
-Share of Gov. Consumption &     21.24 &     19.47 \\  
-Share of Investment &     23.11 &     23.42 \\  
-Share of Imports &     20.54 &     21.50 \\  
-Share of Exports &     21.03 &     22.51 \\  
-Employment Share &     40.49 &     43.80 \\  
-Labor productivity growth &      2.20 &      1.23 \\   \hline
+Share of Priv. Consumption &     55.16 &     55.12 \\  
+Share of Investment &     23.11 &     23.17 \\  
+Share of Gov. Consumption &     21.24 &     20.67 \\  
+Share of Imports &     20.54 &     24.60 \\  
+Share of Exports &     21.03 &     23.56 \\  
+Employment Share &     40.49 &     44.53 \\  
+Labor productivity growth &      2.11 &      1.16 \\  
+Inflation Rate &      6.22 &     11.96 \\   \hline
 \textbf{Germany} &  &  \\  
-Share of Priv. Consumption &     57.15 &     57.29 \\  
-Share of Gov. Consumption &     19.68 &     18.18 \\  
-Share of Investment &     24.50 &     24.30 \\  
-Share of Imports &     21.40 &     21.25 \\  
-Share of Exports &     20.06 &     21.48 \\  
-Employment Share &     48.36 &     48.23 \\  
-Labor productivity growth &      2.41 &      1.48 \\  \hline
+Share of Priv. Consumption &     57.15 &     57.23 \\  
+Share of Investment &     24.50 &     26.13 \\  
+Share of Gov. Consumption &     19.68 &     14.94 \\  
+Share of Imports &     21.40 &     36.07 \\  
+Share of Exports &     20.06 &     34.36 \\  
+Employment Share &     48.36 &     49.49 \\  
+Labor productivity growth &      2.35 &      0.95 \\  
+Inflation Rate &      3.54 &      4.47 \\  \hline
 \textbf{Greece} &  &  \\  
-Share of Priv. Consumption &     63.06 &     60.84 \\  
-Share of Gov. Consumption &     16.75 &     17.21 \\  
-Share of Investment &     26.46 &     22.76 \\  
-Share of Imports &     21.77 &     17.88 \\  
-Share of Exports &     15.50 &     17.07 \\  
-Employment Share &     38.77 &     45.51 \\  
-Labor productivity growth &      1.69 &      1.21 \\  \hline
+Share of Priv. Consumption &     63.06 &     62.56 \\  
+Share of Investment &     26.46 &     22.24 \\  
+Share of Gov. Consumption &     16.75 &     15.84 \\  
+Share of Imports &     21.77 &     22.24 \\  
+Share of Exports &     15.50 &     22.87 \\  
+Employment Share &     38.77 &     41.69 \\  
+Labor productivity growth &      1.44 &      1.09 \\  
+Inflation Rate &     14.70 &     14.71 \\    \hline
 \textbf{Ireland} &  &  \\  
 Share of Priv. Consumption &     61.17 &     55.50 \\  
-Share of Gov. Consumption &     18.72 &     24.34 \\  
 Share of Investment &     21.65 &     24.24 \\  
-Share of Imports &     52.85 &     34.67 \\  
-Share of Exports &     51.30 &     30.59 \\  
+Share of Gov. Consumption &     18.72 &     24.34 \\  
+Share of Imports &     52.85 &     30.59 \\  
+Share of Exports &     51.30 &     34.67 \\  
 Employment Share &     35.36 &     39.90 \\  
-Labor productivity growth &      3.43 &      2.14 \\  \hline
+Labor productivity growth &      3.44 &      2.02 \\  
+Inflation Rate &      8.36 &     47.41 \\   \hline
 \textbf{Italy} &  &  \\  
-Share of Priv. Consumption &     59.00 &     58.72 \\  
-Share of Gov. Consumption &     17.55 &     17.63 \\  
+Share of Priv. Consumption &     59.00 &     57.32 \\  
 Share of Investment &     22.87 &     23.15 \\  
-Share of Imports &     19.28 &     19.37 \\  
-Share of Exports &     19.86 &     19.86 \\  
-Employment Share &     38.25 &     44.11 \\  
-Labor productivity growth &      2.48 &      1.24 \\  \hline
+Share of Gov. Consumption &     17.55 &     18.87 \\  
+Share of Imports &     19.28 &     19.88 \\  
+Share of Exports &     19.86 &     19.22 \\  
+Employment Share &     38.25 &     44.13 \\  
+Labor productivity growth &      2.16 &      1.23 \\  
+Inflation Rate &      9.48 &     12.94 \\  \hline
 \textbf{Luxembourg} &  &  \\  
-Share of Priv. Consumption &     48.16 &     58.05 \\  
-Share of Gov. Consumption &     15.33 &     10.82 \\  
-Share of Investment &     22.57 &     29.26 \\  
-Share of Imports &     81.83 &     39.32 \\  
-Share of Exports &     95.78 &     41.20 \\  
-Employment Share &     46.63 &     51.00 \\  
-Labor productivity growth &      1.81 &      1.54 \\  \hline
+Share of Priv. Consumption &     48.16 &     55.38 \\  
+Share of Investment &     22.57 &     26.28 \\  
+Share of Gov. Consumption &     15.33 &     22.74 \\  
+Share of Imports &     81.83 &     35.72 \\  
+Share of Exports &     95.78 &     40.11 \\  
+Employment Share &     46.63 &     45.79 \\  
+Labor productivity growth &      1.91 &      1.41 \\  
+Inflation Rate &      4.61 &     35.04 \\  \hline
 \textbf{The Netherlands} &  &  \\  
-Share of Priv. Consumption &     50.90 &     54.78 \\  
-Share of Gov. Consumption &     21.94 &     18.40 \\  
-Share of Investment &     22.62 &     26.16 \\  
-Share of Imports &     47.47 &     37.62 \\  
-Share of Exports &     52.01 &     38.27 \\  
+Share of Priv. Consumption &     50.90 &     54.79 \\  
+Share of Investment &     22.62 &     26.17 \\  
+Share of Gov. Consumption &     21.94 &     18.39 \\  
+Share of Imports &     47.47 &     38.28 \\  
+Share of Exports &     52.01 &     37.62 \\  
 Employment Share &     43.78 &     49.70 \\  
-Labor productivity growth &      1.56 &      1.48 \\  \hline
+Labor productivity growth &      1.45 &      1.40 \\  
+Inflation Rate &      4.18 &     12.26 \\  \hline
 \textbf{Portugal} &  &  \\  
-Share of Priv. Consumption &     66.93 &     65.45 \\  
-Share of Gov. Consumption &     14.03 &     13.91 \\  
-Share of Investment &     26.93 &     21.36 \\  
-Share of Imports &     31.16 &     21.84 \\  
-Share of Exports &     23.27 &     21.12 \\  
-Employment Share &     41.81 &     38.57 \\  
-Labor productivity growth &      2.02 &      1.29 \\   \hline
+Share of Priv. Consumption &     66.93 &     65.47 \\  
+Share of Investment &     26.93 &     21.34 \\  
+Share of Gov. Consumption &     14.03 &     13.93 \\  
+Share of Imports &     31.16 &     21.09 \\  
+Share of Exports &     23.27 &     21.83 \\  
+Employment Share &     41.81 &     38.56 \\  
+Labor productivity growth &      1.95 &      1.24 \\  
+Inflation Rate &     14.14 &     19.60 \\   \hline
 \textbf{Spain} &  &  \\  
-Share of Priv. Consumption &     63.12 &     61.46 \\  
-Share of Gov. Consumption &     14.51 &     14.58 \\  
-Share of Investment &     23.78 &     23.82 \\  
-Share of Imports &     18.55 &     17.34 \\  
-Share of Exports &     17.13 &     17.47 \\  
-Employment Share &     35.38 &     43.58 \\  
-Labor productivity growth &      2.56 &      1.10 \\  \hline
+Share of Priv. Consumption &     63.12 &     63.00 \\  
+Share of Investment &     23.78 &     22.13 \\  
+Share of Gov. Consumption &     14.51 &     15.26 \\  
+Share of Imports &     18.55 &     17.59 \\  
+Share of Exports &     17.13 &     17.97 \\  
+Employment Share &     35.38 &     42.17 \\  
+Labor productivity growth &      2.55 &      1.07 \\  
+Inflation Rate &      9.87 &     14.12 \\  \hline
 \hline \hline 
 \end{longtable} 
-\annote{Predictors' means for each country during the pre-treatment period. All numbers are in percent. Variables definitions can be find in Table \ref{TA_Description}.}
+\annote{Predictors' means for each country and its doppelgangers during the pre-treatment period. The doppelganger column corresponds to a simple (non-weighted) average and thus some discrepancies may arise because of that. All numbers are in percent. Variables definitions can be found in Table \ref{TA_Description}.}
 \end{center}
 
 
@@ -821,6 +836,153 @@ In each of the following set of graphs, the blue dashed line represents the norm
     \includegraphics[scale=0.7]{SCM_without_USA.eps}
              \annote{In each graph, the blue dashed line represents the normalized real GDP for the synthetic country and the black full line represents the series for the actual country. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger prior to the euro accession. The vertical line depicts the placebo treatment period - 2001 for Greece and 1999 for all other countries. For all countries the analysis starts in 1970 and ends in 2007. The United States is excluded from the donor pool. }
 \end{figure}
+
+\section{\label{SS_Components} Components Analysis}
+
+\begin{figure}[h!]
+    \centering
+    \caption{\label{F_Components_AUT} Components of Austria's GDP}
+    \subfigure[Private Consumption]{\includegraphics[width=8cm]{Composition/SCM_csh_c_1_Annual.eps}}
+    \subfigure[Government Consumption]{\includegraphics[width=8cm]{Composition/SCM_csh_g_1_Annual.eps}}
+    \subfigure[Investment]{\includegraphics[width=8cm]{Composition/SCM_csh_i_1_Annual.eps}}
+    \subfigure[Exports]{\includegraphics[width=8cm]{Composition/SCM_csh_x_1_Annual.eps}}
+    \subfigure[Imports]{\includegraphics[width=8cm]{Composition/SCM_csh_m_1_Annual.eps}}
+    \subfigure[Net Exports]{\includegraphics[width=8cm]{Composition/SCM_csh_nx_1_Annual.eps}}
+    \annote{The plots depict, for each GDP component, the deviation in percent from the value of 1970. The blue dashed lines represents the synthetic Austria computed in section \ref{S_Doppelganger}. The full black lines stand for the actual Austrian series. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger prior to the euro accession.}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \caption{\label{F_Components_BEL} Components of Belgium's GDP}
+    \subfigure[Private Consumption]{\includegraphics[width=8cm]{Composition/SCM_csh_c_3_Annual.eps}}
+    \subfigure[Government Consumption]{\includegraphics[width=8cm]{Composition/SCM_csh_g_3_Annual.eps}}
+    \subfigure[Investment]{\includegraphics[width=8cm]{Composition/SCM_csh_i_3_Annual.eps}}
+    \subfigure[Exports]{\includegraphics[width=8cm]{Composition/SCM_csh_x_3_Annual.eps}}
+    \subfigure[Imports]{\includegraphics[width=8cm]{Composition/SCM_csh_m_3_Annual.eps}}
+    \subfigure[Net Exports]{\includegraphics[width=8cm]{Composition/SCM_csh_nx_3_Annual.eps}}
+    \annote{The plots depict, for each GDP component, the deviation in percent from the value of 1970. The blue dashed lines represents the synthetic Austria computed in section \ref{S_Doppelganger}. The full black lines stand for the actual Belgian series. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger prior to the euro accession. }
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \caption{\label{F_Components_FIN} Components of Finland's GDP}
+    \subfigure[Private Consumption]{\includegraphics[width=8cm]{Composition/SCM_csh_c_7_Annual.eps}}
+    \subfigure[Government Consumption]{\includegraphics[width=8cm]{Composition/SCM_csh_g_7_Annual.eps}}
+    \subfigure[Investment]{\includegraphics[width=8cm]{Composition/SCM_csh_i_7_Annual.eps}}
+    \subfigure[Exports]{\includegraphics[width=8cm]{Composition/SCM_csh_x_7_Annual.eps}}
+    \subfigure[Imports]{\includegraphics[width=8cm]{Composition/SCM_csh_m_7_Annual.eps}}
+    \subfigure[Net Exports]{\includegraphics[width=8cm]{Composition/SCM_csh_nx_7_Annual.eps}}
+    \annote{The plots depict, for each GDP component, the deviation in percent from the value of 1970. The blue dashed lines represents the synthetic Belgium computed in section \ref{S_Doppelganger}. The full black lines stand for the actual Finnish series. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger prior to the euro accession. }
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \caption{\label{F_Components_FRA} Components of France's GDP}
+    \subfigure[Private Consumption]{\includegraphics[width=8cm]{Composition/SCM_csh_c_8_Annual.eps}}
+    \subfigure[Government Consumption]{\includegraphics[width=8cm]{Composition/SCM_csh_g_8_Annual.eps}}
+    \subfigure[Investment]{\includegraphics[width=8cm]{Composition/SCM_csh_i_8_Annual.eps}}
+    \subfigure[Exports]{\includegraphics[width=8cm]{Composition/SCM_csh_x_8_Annual.eps}}
+    \subfigure[Imports]{\includegraphics[width=8cm]{Composition/SCM_csh_m_8_Annual.eps}}
+    \subfigure[Net Exports]{\includegraphics[width=8cm]{Composition/SCM_csh_nx_8_Annual.eps}}
+    \annote{The plots depict, for each GDP component, the deviation in percent from the value of 1970. The blue dashed lines represents the synthetic France computed in section \ref{S_Doppelganger}. The full black lines stand for the actual French series. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger prior to the euro accession. }
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \caption{\label{F_Components_DEU} Components of Germany's GDP}
+    \subfigure[Private Consumption]{\includegraphics[width=8cm]{Composition/SCM_csh_c_9_Annual.eps}}
+    \subfigure[Government Consumption]{\includegraphics[width=8cm]{Composition/SCM_csh_g_9_Annual.eps}}
+    \subfigure[Investment]{\includegraphics[width=8cm]{Composition/SCM_csh_i_9_Annual.eps}}
+    \subfigure[Exports]{\includegraphics[width=8cm]{Composition/SCM_csh_x_9_Annual.eps}}
+    \subfigure[Imports]{\includegraphics[width=8cm]{Composition/SCM_csh_m_9_Annual.eps}}
+    \subfigure[Net Exports]{\includegraphics[width=8cm]{Composition/SCM_csh_nx_9_Annual.eps}}
+    \annote{The plots depict, for each GDP component, the deviation in percent from the value of 1970. The blue dashed lines represents the synthetic Germany computed in section \ref{S_Doppelganger}. The full black lines stand for the actual German series. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger prior to the euro accession. }
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \caption{\label{F_Components_GRC} Components of Greece's GDP}
+    \subfigure[Private Consumption]{\includegraphics[width=8cm]{Composition/SCM_csh_c_10_Annual.eps}}
+    \subfigure[Government Consumption]{\includegraphics[width=8cm]{Composition/SCM_csh_g_10_Annual.eps}}
+    \subfigure[Investment]{\includegraphics[width=8cm]{Composition/SCM_csh_i_10_Annual.eps}}
+    \subfigure[Exports]{\includegraphics[width=8cm]{Composition/SCM_csh_x_10_Annual.eps}}
+    \subfigure[Imports]{\includegraphics[width=8cm]{Composition/SCM_csh_m_10_Annual.eps}}
+    \subfigure[Net Exports]{\includegraphics[width=8cm]{Composition/SCM_csh_nx_10_Annual.eps}}
+    \annote{The plots depict, for each GDP component, the deviation in percent from the value of 1970. The blue dashed lines represents the synthetic Greece computed in section \ref{S_Doppelganger}. The full black lines stand for the actual Greek series. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger prior to the euro accession. }
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \caption{\label{F_Components_IRL} Components of Ireland's GDP}
+    \subfigure[Private Consumption]{\includegraphics[width=8cm]{Composition/SCM_csh_c_12_Annual.eps}}
+    \subfigure[Government Consumption]{\includegraphics[width=8cm]{Composition/SCM_csh_g_12_Annual.eps}}
+    \subfigure[Investment]{\includegraphics[width=8cm]{Composition/SCM_csh_i_12_Annual.eps}}
+    \subfigure[Exports]{\includegraphics[width=8cm]{Composition/SCM_csh_m_12_Annual.eps}}
+    \subfigure[Imports]{\includegraphics[width=8cm]{Composition/SCM_csh_x_12_Annual.eps}}
+    \subfigure[Net Exports]{\includegraphics[width=8cm]{Composition/SCM_csh_nx_12_Annual.eps}}
+    \annote{The plots depict, for each GDP component, the deviation in percent from the value of 1970. The blue dashed lines represents the synthetic Ireland computed in section \ref{S_Doppelganger}. The full black lines stand for the actual Irish series. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger prior to the euro accession. }
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \caption{\label{F_Components_ITA} Components of Italy's GDP}
+    \subfigure[Private Consumption]{\includegraphics[width=8cm]{Composition/SCM_csh_c_14_Annual.eps}}
+    \subfigure[Government Consumption]{\includegraphics[width=8cm]{Composition/SCM_csh_g_14_Annual.eps}}
+    \subfigure[Investment]{\includegraphics[width=8cm]{Composition/SCM_csh_i_14_Annual.eps}}
+    \subfigure[Exports]{\includegraphics[width=8cm]{Composition/SCM_csh_m_14_Annual.eps}}
+    \subfigure[Imports]{\includegraphics[width=8cm]{Composition/SCM_csh_x_14_Annual.eps}}
+    \subfigure[Net Exports]{\includegraphics[width=8cm]{Composition/SCM_csh_nx_14_Annual.eps}}
+    \annote{The plots depict, for each GDP component, the deviation in percent from the value of 1970. The blue dashed lines represents the synthetic Italy computed in section \ref{S_Doppelganger}. The full black lines stand for the actual Italian series. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger prior to the euro accession. }
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \caption{\label{F_Components_LUX} Components of Luxembourg's GDP}
+    \subfigure[Private Consumption]{\includegraphics[width=8cm]{Composition/SCM_csh_c_16_Annual.eps}}
+    \subfigure[Government Consumption]{\includegraphics[width=8cm]{Composition/SCM_csh_g_16_Annual.eps}}
+    \subfigure[Investment]{\includegraphics[width=8cm]{Composition/SCM_csh_i_16_Annual.eps}}
+    \subfigure[Exports]{\includegraphics[width=8cm]{Composition/SCM_csh_x_16_Annual.eps}}
+    \subfigure[Imports]{\includegraphics[width=8cm]{Composition/SCM_csh_m_16_Annual.eps}}
+    \subfigure[Net Exports]{\includegraphics[width=8cm]{Composition/SCM_csh_nx_16_Annual.eps}}
+    \annote{The plots depict, for each GDP component, the deviation in percent from the value of 1970. The blue dashed lines represents the synthetic Luxembourg computed in section \ref{S_Doppelganger}. The full black lines stand for the actual Luxembourg's series. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger prior to the euro accession. }
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \caption{\label{F_Components_NLD} Components of The Netherlands's GDP}
+    \subfigure[Private Consumption]{\includegraphics[width=8cm]{Composition/SCM_csh_c_18_Annual.eps}}
+    \subfigure[Government Consumption]{\includegraphics[width=8cm]{Composition/SCM_csh_g_18_Annual.eps}}
+    \subfigure[Investment]{\includegraphics[width=8cm]{Composition/SCM_csh_i_18_Annual.eps}}
+    \subfigure[Exports]{\includegraphics[width=8cm]{Composition/SCM_csh_x_18_Annual.eps}}
+    \subfigure[Imports]{\includegraphics[width=8cm]{Composition/SCM_csh_m_18_Annual.eps}}
+    \subfigure[Net Exports]{\includegraphics[width=8cm]{Composition/SCM_csh_nx_18_Annual.eps}}
+    \annote{The plots depict, for each GDP component, the deviation in percent from the value of 1970. The blue dashed lines represents the synthetic Netherlands computed in section \ref{S_Doppelganger}. The full black lines stand for the actual Dutch series. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger prior to the euro accession.}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \caption{\label{F_Components_PRT} Components of Portugal's GDP}
+    \subfigure[Private Consumption]{\includegraphics[width=8cm]{Composition/SCM_csh_c_21_Annual.eps}}
+    \subfigure[Government Consumption]{\includegraphics[width=8cm]{Composition/SCM_csh_g_21_Annual.eps}}
+    \subfigure[Investment]{\includegraphics[width=8cm]{Composition/SCM_csh_i_21_Annual.eps}}
+    \subfigure[Exports]{\includegraphics[width=8cm]{Composition/SCM_csh_x_21_Annual.eps}}
+    \subfigure[Imports]{\includegraphics[width=8cm]{Composition/SCM_csh_m_21_Annual.eps}}
+    \subfigure[Net Exports]{\includegraphics[width=8cm]{Composition/SCM_csh_nx_21_Annual.eps}}
+    \annote{The plots depict, for each GDP component, the deviation in percent from the value of 1970. The blue dashed lines represents the synthetic Portugal computed in section \ref{S_Doppelganger}. The full black lines stand for the actual Portuguese series.  The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger prior to the euro accession.}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \caption{\label{F_Components_ESP} Components of Spain's GDP}
+    \subfigure[Private Consumption]{\includegraphics[width=8cm]{Composition/SCM_csh_c_22_Annual.eps}}
+    \subfigure[Government Consumption]{\includegraphics[width=8cm]{Composition/SCM_csh_g_22_Annual.eps}}
+    \subfigure[Investment]{\includegraphics[width=8cm]{Composition/SCM_csh_i_22_Annual.eps}}
+    \subfigure[Exports]{\includegraphics[width=8cm]{Composition/SCM_csh_x_22_Annual.eps}}
+    \subfigure[Imports]{\includegraphics[width=8cm]{Composition/SCM_csh_m_22_Annual.eps}}
+    \subfigure[Net Exports]{\includegraphics[width=8cm]{Composition/SCM_csh_nx_22_Annual.eps}}
+    \annote{The plots depict, for each GDP component, the deviation in percent from the value of 1970. The blue dashed lines represents the synthetic Spain computed in section \ref{S_Doppelganger}. The full black lines stand for the actual Spanish series. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger prior to the euro accession.}
+\end{figure}
+
 
 \begin{landscape}
 \begin{table}[htbp]
