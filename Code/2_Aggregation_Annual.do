@@ -13,11 +13,6 @@ generated. The new dataset is saved as LP_Annual.dta
 clear
 set more off
 
-* Specification 
-global SPECIFICATION Annual
-
-*upload correspondent global variables
-do Master_EMU.do
 
 use "${Data}Auxi\SCM_1_Annual", clear
 

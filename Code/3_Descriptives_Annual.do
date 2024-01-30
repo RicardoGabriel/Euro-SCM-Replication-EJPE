@@ -18,12 +18,6 @@ graph drop _all
 use "${Data}Analysis_Annual", clear
 
 
-* Specification
-global SPECIFICATION Annual
-*global COMPONENTS On
-
-*upload correspondent global variables
-*do `"${PATH_IN_MASTER}/Master_EMU.do"'
 
 foreach var in $covariates{
 	replace `var' = `var'*100

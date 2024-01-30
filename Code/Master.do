@@ -72,7 +72,7 @@ global number_donor = 14
 * Table A.2 (Comp_Annual.tex); Table A.3 (Weights_Annual.tex), 
 * Table A.6 (Weights_Decomposition.tex); Table A.7 (Net_Exports__Decomposition.tex)
 * 
-
+/*
 do Paths
 do 0_Data_Management_Annual
 do 1_SCM_Annual
@@ -116,19 +116,18 @@ from the list donor_names and write it into the remove global up to 3 countries
 including spaces (e.g. United Kingdom, or Chile) 
 */
 
-/*
-global donor_names Australia Canada Chile Denmark Iceland Israel Korea Mexico NewZealand Norway Sweden Switzerland UnitedKingdom UnitedStates
-global remove_1 
-global remove_2 
-global remove_3 
-global remove_nr = 0
+
+global donor_names Australia Canada Chile Iceland Israel Korea Mexico NewZealand Norway Switzerland UnitedStates
+global remove_1 Denmark
+global remove_2 Sweden
+global remove_3 United Kingdom
+global remove_nr = 3
 
 do Paths
 do 0_Data_Management_Annual
 do 1_SCM_Annual
 do 2_Aggregation_Annual
 do 6_Graphs_Other
-
 */
 
 

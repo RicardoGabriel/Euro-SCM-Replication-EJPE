@@ -233,6 +233,8 @@ use "${Data}LP_Annual", clear
 graph combine "${Fig}Auxi\SCM_gdp_1_Annual.gph" "${Fig}Auxi\SCM_gdp_3_Annual.gph" "${Fig}Auxi\SCM_gdp_7_Annual.gph" "${Fig}Auxi\SCM_gdp_8_Annual.gph" "${Fig}Auxi\SCM_gdp_9_Annual.gph" "${Fig}Auxi\SCM_gdp_10_Annual.gph" "${Fig}Auxi\SCM_gdp_12_Annual.gph" "${Fig}Auxi\SCM_gdp_14_Annual.gph" "${Fig}Auxi\SCM_gdp_16_Annual.gph" "${Fig}Auxi\SCM_gdp_18_Annual.gph" "${Fig}Auxi\SCM_gdp_21_Annual.gph" "${Fig}Auxi\SCM_gdp_22_Annual.gph", l2title("Real GDP, 2011 USD, PPP adjusted, deviation from 1970 (%)", size(small)) iscale(*0.8) imargin(tiny) com 
 graph export "${Fig}SCM_normgdp_ppp_s_Annual.pdf", replace
 }
+
+*Baseline variable
 else if ("$outcome" == "normgdp_s") {
 foreach x in $countries {
 
