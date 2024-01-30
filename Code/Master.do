@@ -89,14 +89,14 @@ do 5_Graphs_Annual
 
 */
 
-/*
+
 * In-time placebo test
-* Figure 2 (and any other where the end of sample is 2007 and treatment date 
+* Figure 2 (and any other where the end of sample is 2007 and a placebo treatment date 
 * is between 1972 and 2006)
 
 * Run in time placebo
-global treatment = 1992
-global treatment_GRC = 1992
+global treatment = 1998
+global treatment_GRC = 1998
 
 do Paths
 do 0_Data_Management_Annual
@@ -116,7 +116,7 @@ from the list donor_names and write it into the remove global up to 3 countries
 including spaces (e.g. United Kingdom, or Chile) 
 */
 
-
+/*
 global donor_names Australia Canada Chile Iceland Israel Korea Mexico NewZealand Norway Switzerland UnitedStates
 global remove_1 Denmark
 global remove_2 Sweden
