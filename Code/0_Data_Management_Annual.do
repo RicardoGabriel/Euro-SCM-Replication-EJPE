@@ -146,7 +146,7 @@ xtset id time
 replace GNI = l.GNI*(1+d.GNIc/l.GNIc) if GNI==.
 drop time GNIc
 * correct this shotcut to allow exercise for Bond to run, currently only exclude Greece from the final picture
-replace GNI=-999 if GNI==.
+replace GNI=-99999 if GNI==.
 
 xtset id date				
 				
@@ -185,8 +185,9 @@ foreach x in $donor_countries{
 drop if year > $end | year < $begin
 
 *Construct log normalized real gdp per capita
-*get gdp per capita
+*get gdp/gni per capita
 gen rgdpnapc=rgdpna/pop
+
 
 * trick to delete just for the sake of running the referee exercise
 *replace rgdpnapc = rgdpnapc/2 if country =="Luxembourg"
@@ -196,13 +197,13 @@ xtset id date
 bys id: gen normgdp_s = rgdpna/rgdpna[1]
 bys id: gen normgdppc_s = rgdpnapc/rgdpnapc[1]
 bys id: gen normgdp_ppp_s = rgdpe/rgdpe[1]
-bys id: gen normgni_s = GNI/GNI[1]
+bys id: gen normgnipc_s = GNI/GNI[1]
 
 *get growth rate normalized gdp per capita (interpretation: growth of the real gdp per capita relative to 1970)
 replace normgdp_s=normgdp_s-1
 replace normgdppc_s=normgdppc_s-1
 replace normgdp_ppp_s=normgdp_ppp_s-1
-replace normgni_s = normgni_s-1
+replace normgnipc_s = normgnipc_s-1
 
 *construct linear trend 
 xtset id date

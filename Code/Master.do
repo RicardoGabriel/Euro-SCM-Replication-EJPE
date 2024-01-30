@@ -93,10 +93,10 @@ do 5_Graphs_Annual
 * In-time placebo test
 * Figure 2 (and any other where the end of sample is 2007 and a placebo treatment date 
 * is between 1972 and 2006)
-
+/*
 * Run in time placebo
-global treatment = 1998
-global treatment_GRC = 1998
+global treatment = 1992
+global treatment_GRC = 1992
 
 do Paths
 do 0_Data_Management_Annual
@@ -146,11 +146,11 @@ do 2_Aggregation_Annual
 do 6_Graphs_Other
 */
 
-/*
-* Run rob check for only real per capita gni - does not work for Germany, Greece, Italy, and Portugal
-global outcome GNI
-global outcomecg GNIcg
-global countries 1 3 7 8 9 12 14 18 21 22
+
+* Run rob check for only real per capita gni (GNI or normgnipc_s) - does not work for Greece (no data) and Luxembourg 
+global outcome normgnipc_s
+global outcomecg normgnipc_scg
+global countries 3 7 8 9 12 14 18 21 22
 
 do Paths
 do 0_Data_Management_Annual
@@ -158,6 +158,7 @@ do 1_SCM_Annual
 do 2_Aggregation_Annual
 do 6_Graphs_Other
 
+/*
 * Run rob for only real gdp per capita - does not work for Spain
 global outcome rgdpnapc
 global outcome rgdpnapccg
