@@ -8,7 +8,7 @@ Master code for changing the kind of exercise you want to perform by
 changing the global variables in the project. Annual data (1970-2007)
 */
 
-
+/*
 * ids of treated units: 1 3 7 8 9 10 12 14 17 19 22 23
 * Austria: 1
 * Belgium: 3
@@ -28,21 +28,6 @@ global countries $countries_choice
 *remove first from previous list id to easily aggregate datasets in Aggregation.do
 *global countries_agg 3 7 8 9 10 12 14 16 18 21 22
 global number_countries = 12
-
-/*
-For performing robustness tests change here: remove the country you want to test 
-from the list donor_names and write it into the remove global 
-(e.g. "United Kingdom") max 3 countries
-*/
-global remove_1 
-global remove_2 
-global remove_3 
-global remove_nr = 0
-
-*Donor countries
-global donor_names Australia Canada Chile Denmark Iceland Israel Korea Mexico NewZealand Norway Sweden Switzerland UnitedKingdom UnitedStates
-global donor_countries 2 4 5 6 11 13 15 17 19 20 23 24 25 26
-global number_donor=14
 
 *Donor  countries (R version)
 global donor_countries_R 2 4 5 6 11 13 15 17 19 20 23 24 25 26

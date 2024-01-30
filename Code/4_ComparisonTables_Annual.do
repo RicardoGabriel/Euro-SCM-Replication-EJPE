@@ -14,13 +14,6 @@ graph drop _all
 use "${Data}LP_Annual", clear
 
 
-* Specification
-global SPECIFICATION Annual
-
-*upload correspondent global variables
-do Master_EMU.do
-
-
 *row size
 local r=2
 
@@ -65,7 +58,7 @@ $covariates "France" $covariates "Germany" $covariates "Greece" $covariates ///
 local c = 1
 foreach var in $covariates{
 	replace `var' = `var'*100
-	if `var' == "inflation" {
+	if "`var'" == "inflation" {
 		replace inflation = inflation/100
 	}
 	sum `var' if id==1 & year <= 1998
@@ -79,7 +72,7 @@ local c = 2
 local r = `r' - $number_covariates
 foreach var in $covariatescg{
 	replace `var' = `var'*100
-	if `var' == "inflationcg" {
+	if "`var'" == "inflationcg" {
 		replace inflationcg = inflationcg/100
 	}
 	sum `var' if id==1 & year <= 1998

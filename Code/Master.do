@@ -7,21 +7,71 @@ Results not directly produced in Stata
 
 */
 
-global end_choice = 2007
+********************************************************************************
+* ids of treated units: 1 3 7 8 9 10 12 14 17 19 22 23
+* Austria: 1
+* Belgium: 3
+* Finland: 7
+* France: 8
+* Germany: 9
+* Greece: 10 - take into account that Greece has a different treatment date 
+* Ireland: 12
+* Italy: 14
+* Luxembourg : 16 - leave it out of the analysis when using (non-normalized) gni or real gdp per capita - because its high level can't be matched.
+* Netherlands : 18
+* Portugal : 21
+* Spain : 22
+
+global countries_name Austria Belgium Finland France Germany Greece Ireland Italy Luxembourg Netherlands Portugal Spain
+global countries_code AUT BEL FIN FRA DEU GRC IRL ITA LUX NLD PRT ESP
+global countries 1 3 7 8 9 10 12 14 16 18 21 22
+global number_countries = 12
+
+*choose outcome variable (baseline: normgdp_s)
+global outcome normgdp_s
 
 
-/*
+*choose predictors to the following list and tell stata how many are you using (e.g. inflation)
+global covariates csh_c csh_i csh_g csh_m csh_x csh_emp csh_prod inflation
+global number_covariates = 8
+
+*change also for doppelganger series the choice of the outcome and covariates (ending with "cg" for control group)
+global outcomecg normgdp_scg
+global covariatescg csh_ccg csh_icg csh_gcg csh_xcg csh_mcg csh_empcg csh_prodcg inflationcg
+
+
+*treatment dates
+global treatment = 1999
+global treatment_GRC = 2001
+
+*starting and ending years of the sample
+global begin = 1970
+global end = 2007
+
+* Default Globals for rob checks changes in donor pool
+global remove_1 
+global remove_2 
+global remove_3 
+global remove_nr = 0
+
+*Donor countries
+global donor_names Australia Canada Chile Denmark Iceland Israel Korea Mexico NewZealand Norway Sweden Switzerland UnitedKingdom UnitedStates
+global donor_countries 2 4 5 6 11 13 15 17 19 20 23 24 25 26
+global number_donor = 14
+
+
+********************************************************************************
+
+
+
+
+
 * Baseline Results
 * Figure 1, Figure 7 (Weights_Decomposition.tex)
 * Table 1 (Weights_Decomposition.tex), 
 * Table A.2 (Comp_Annual.tex); Table A.3 (Weights_Annual.tex), 
 * Table A.6 (Weights_Decomposition.tex); Table A.7 (Net_Exports__Decomposition.tex)
 * 
-global treatment_choice = 1999
-global treatment_GRC_choice = 2001
-global outcome_choice normgdp_s
-global outcome_choicecg normgdp_scg
-global countries_choice 1 3 7 8 9 10 12 14 16 18 21 22
 
 do Paths
 do 0_Data_Management_Annual
@@ -45,11 +95,8 @@ do 5_Graphs_Annual
 * is between 1972 and 2006)
 
 * Run in time placebo
-global treatment_choice = 1992
-global treatment_GRC_choice = 1992
-global outcome_choice normgdp_s
-global outcome_choicecg normgdp_scg
-global countries_choice 1 3 7 8 9 10 12 14 16 18 21 22
+global treatment = 1992
+global treatment_GRC = 1992
 
 do Paths
 do 0_Data_Management_Annual
@@ -62,17 +109,19 @@ do 6_Graphs_Other
 
 
 * Leave countries out of the donor pool placebo
-global treatment_choice = 1999
-global treatment_GRC_choice = 2001
-global outcome_choice normgdp_s
-global outcome_choicecg normgdp_scg
-global countries_choice 1 3 7 8 9 10 12 14 16 18 21 22
 
-global donor_names Australia Canada Denmark Iceland Israel Korea NewZealand Norway Sweden Switzerland UnitedKingdom UnitedStates
-global remove_1 Mexico
-global remove_2 Chile
+/*
+For performing robustness tests change here: remove the country you want to test 
+from the list donor_names and write it into the remove global up to 3 countries
+including spaces (e.g. United Kingdom, or Chile) 
+*/
+
+/*
+global donor_names Australia Canada Chile Denmark Iceland Israel Korea Mexico NewZealand Norway Sweden Switzerland UnitedKingdom UnitedStates
+global remove_1 
+global remove_2 
 global remove_3 
-global remove_nr = 2
+global remove_nr = 0
 
 do Paths
 do 0_Data_Management_Annual
@@ -87,10 +136,8 @@ do 6_Graphs_Other
 
 /*
 * Run rob check Referee 1 (normgdp_ppp_s, normgdppc_s, Bond, inflation)
-global treatment_choice = 1999
-global treatment_GRC_choice = 2001
-global outcome_choice Bond
-global outcome_choicecg Bondcg
+global outcome Bond
+global outcomecg Bondcg
 global countries_choice 1 3 7 8 9 10 12 14 16 18 21 22
 
 do Paths
@@ -102,11 +149,9 @@ do 6_Graphs_Other
 
 /*
 * Run rob check for only real per capita gni - does not work for Germany, Greece, Italy, and Portugal
-global treatment_choice = 1999
-global treatment_GRC_choice = 2001
-global outcome_choice GNI
-global outcome_choicecg GNIcg
-global countries_choice 1 3 7 8 9 12 14 18 21 22
+global outcome GNI
+global outcomecg GNIcg
+global countries 1 3 7 8 9 12 14 18 21 22
 
 do Paths
 do 0_Data_Management_Annual
@@ -115,8 +160,8 @@ do 2_Aggregation_Annual
 do 6_Graphs_Other
 
 * Run rob for only real gdp per capita - does not work for Spain
-global outcome_choice rgdpnapc
-global outcome_choicecg rgdpnapccg
+global outcome rgdpnapc
+global outcome rgdpnapccg
 global countries_choice 1 3 7 8 9 10 12 14 16 18 21
 
 do Paths

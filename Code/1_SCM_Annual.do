@@ -31,11 +31,11 @@ do Paths.do
 
 
 * Decide on Specification (Annual or Quarterly) and whether 
-global SPECIFICATION Annual
+*global SPECIFICATION Annual
 *global COMPONENTS On
 
 *upload correspondent global variables
-do Master_EMU.do
+*do Master_EMU.do
 
 
 
@@ -93,7 +93,7 @@ foreach var in $outcome $covariates {
 *Get weights from SCM
 matrix w = e(W_weights)
 
-
+mat list w
 
 *For each pair id-weight compute contribution to SCG's variables of interest
 foreach var in $outcome $covariates{
