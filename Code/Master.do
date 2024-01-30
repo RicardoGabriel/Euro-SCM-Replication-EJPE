@@ -147,10 +147,10 @@ do 2_Aggregation_Annual
 do 6_Graphs_Other
 */
 
-/*
+
 * Run rob check for only real per capita gni (GNI) - does not work for Greece (no data) and Luxembourg 
-global outcome normgnipc_s
-global outcomecg normgnipc_scg
+global outcome GNI
+global outcomecg GNIcg
 global countries 1 3 7 8 9 12 14 18 21 22
 
 do Paths
