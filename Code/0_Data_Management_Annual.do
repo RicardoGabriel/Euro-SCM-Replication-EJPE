@@ -185,7 +185,7 @@ foreach x in $donor_countries{
 drop if year > $end | year < $begin
 
 *Construct log normalized real gdp per capita
-*get gdp/gni per capita
+*get gdp per capita
 gen rgdpnapc=rgdpna/pop
 
 

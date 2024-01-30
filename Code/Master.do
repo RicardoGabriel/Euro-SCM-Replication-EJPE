@@ -135,8 +135,9 @@ do 6_Graphs_Other
 
 /*
 * Run rob check Referee 1 (normgdp_ppp_s, normgdppc_s, Bond, inflation)
-global outcome Bond
-global outcomecg Bondcg
+* when running inflation (remove it from predictors)
+global outcome normgdp_ppp_s
+global outcomecg normgdp_ppp_scg
 global countries_choice 1 3 7 8 9 10 12 14 16 18 21 22
 
 do Paths
@@ -146,22 +147,24 @@ do 2_Aggregation_Annual
 do 6_Graphs_Other
 */
 
-
-* Run rob check for only real per capita gni (GNI or normgnipc_s) - does not work for Greece (no data) and Luxembourg 
+/*
+* Run rob check for only real per capita gni (GNI) - does not work for Greece (no data) and Luxembourg 
 global outcome normgnipc_s
 global outcomecg normgnipc_scg
-global countries 3 7 8 9 12 14 18 21 22
+global countries 1 3 7 8 9 12 14 18 21 22
 
 do Paths
 do 0_Data_Management_Annual
 do 1_SCM_Annual
 do 2_Aggregation_Annual
 do 6_Graphs_Other
+*/
+
 
 /*
 * Run rob for only real gdp per capita - does not work for Spain
 global outcome rgdpnapc
-global outcome rgdpnapccg
+global outcomecg rgdpnapccg
 global countries_choice 1 3 7 8 9 10 12 14 16 18 21
 
 do Paths

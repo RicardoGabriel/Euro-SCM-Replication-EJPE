@@ -234,6 +234,64 @@ graph combine "${Fig}Auxi\SCM_gdp_1_Annual.gph" "${Fig}Auxi\SCM_gdp_3_Annual.gph
 graph export "${Fig}SCM_normgdp_ppp_s_Annual.pdf", replace
 }
 
+else if ("$outcome" == "normgdppc_s") {
+foreach x in 1 3 7 8 9 10 12 14 16 18 21 22{
+
+keep if id==`x'
+
+local s = country 
+label var $outcome "Country"
+label var $outcomecg "Synthetic Country"
+if (code=="GRC") {
+
+		
+	*get standard deviation (in percent)
+	gen dif = $outcome - $outcomecg
+	sum dif if id==`x' & year<$treatment_GRC
+	gen std=(r(sd))*2*100
+
+			*present as "deviation from base year (percent)"
+		foreach var in $outcome $outcomecg {
+			local f=`var'[1]
+			replace `var' = (`var'-`f')*100
+		}	
+		
+	*generate upper and lower bound
+	gen fup=$outcomecg +std
+	gen flow=$outcomecg -std
+	*draw figure
+	twoway (rarea fup flow date if id== `x', color(gs13)) (line $outcomecg $outcome date if id == `x', lwidth(thick ..)  legend(off) ylabel(0(100)400) xtitle(" ") ti("`s'") lcolor(blue) lpa("-") tline($treatment_GRC, lcolor(gray)) tlabel("$begin"(6)"$end"))
+}
+else {
+
+	*get standard deviation (in percent)
+	gen dif = $outcome - $outcomecg 
+	sum dif if id==`x' & year<$treatment
+	gen std=(r(sd))*2*100
+	
+		*present as "deviation from base year (percent)"
+		foreach var in $outcome $outcomecg {
+			local f=`var'[1]
+			replace `var' = (`var'-`f')*100
+		}
+	
+	*generate upper and lower bound
+	gen fup=$outcomecg +std
+	gen flow=$outcomecg -std
+	*draw figure
+	twoway (rarea fup flow date if id== `x', color(gs13)) (line $outcomecg $outcome date if id == `x', lwidth(thick ..)  legend(off) ylabel(0(100)400) xtitle(" ") ti("`s'") lcolor(blue) lpa("-") tline($treatment, lcolor(gray)) tlabel("$begin"(6)"$end"))
+}
+graph save "${Fig}Auxi\SCM_gdp_`x'_Annual.gph", replace
+
+use "${Data}LP_Annual", clear
+}
+
+graph combine "${Fig}Auxi\SCM_gdp_1_Annual.gph" "${Fig}Auxi\SCM_gdp_3_Annual.gph" "${Fig}Auxi\SCM_gdp_7_Annual.gph" "${Fig}Auxi\SCM_gdp_8_Annual.gph" "${Fig}Auxi\SCM_gdp_9_Annual.gph" "${Fig}Auxi\SCM_gdp_10_Annual.gph" "${Fig}Auxi\SCM_gdp_12_Annual.gph" "${Fig}Auxi\SCM_gdp_14_Annual.gph" "${Fig}Auxi\SCM_gdp_16_Annual.gph" "${Fig}Auxi\SCM_gdp_18_Annual.gph" "${Fig}Auxi\SCM_gdp_21_Annual.gph" "${Fig}Auxi\SCM_gdp_22_Annual.gph", l2title("Real GDP per capita, deviation from 1970 (%)", size(small)) iscale(*0.8) imargin(tiny) com 
+graph export "${Fig}SCM_normgdppc_s_Annual.pdf", replace
+}
+
+
+
 *Baseline variable
 else if ("$outcome" == "normgdp_s") {
 foreach x in $countries {
@@ -398,7 +456,7 @@ use "${Data}LP_Annual", clear
 }
 
 graph combine "${Fig}Auxi\SCM_gdp_1_Annual.gph" "${Fig}Auxi\SCM_gdp_3_Annual.gph" "${Fig}Auxi\SCM_gdp_7_Annual.gph" "${Fig}Auxi\SCM_gdp_8_Annual.gph" "${Fig}Auxi\SCM_gdp_9_Annual.gph" "${Fig}Auxi\SCM_gdp_12_Annual.gph" "${Fig}Auxi\SCM_gdp_14_Annual.gph" "${Fig}Auxi\SCM_gdp_18_Annual.gph" "${Fig}Auxi\SCM_gdp_21_Annual.gph" "${Fig}Auxi\SCM_gdp_22_Annual.gph", l2title("GNI per capita deviation from $begin (percent)", size(small)) iscale(*0.8) imargin(tiny) com 
-graph export "${Fig}SCM_GNI_Annual.pdf", replace
+graph export "${Fig}SCM_gni_Annual.pdf", replace
 
 keep if year ==2007 & mu == 1
 gen GNIdif = GNI - GNIcg
