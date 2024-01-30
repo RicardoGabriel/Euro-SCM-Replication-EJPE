@@ -254,7 +254,7 @@ We ran further time-placebo tests in which the placebo treatment date is set art
 
 Figure \ref{F_Maastricht} presents limited evidence in favor of the existence of anticipation effects. If anything, the gap between the actual and the synthetic series becomes wider than the one analyzed in Figure \ref{F_1}. Notwithstanding, the direction of the effect remains unchanged. Thus, ignoring possible anticipation effects in our baseline estimates may lead to a lower bound of the euro impact for countries like Austria, Belgium, France, and Italy.\footnote{The case for Greece is not worrisome given its bad pre-treatment fit and, therefore, its lack of significance.}
 
-The absence of anticipation effects for the remaining countries may be due to two things. First, the key event representing a change for most European citizens was the irrevocable exchange rate fix on 31st December 1998 and the euro launch on the 1st of January 1999. Second, most of these countries had already experienced trade and economic gains from joining the European Union \citep{Campos2018}. Therefore, such effects lie in our pre-treatment sample and thus, are already being considered.\footnote{Add the fact that Italy dropped the exchange rate agreement and floated for a year 93-94. Add that Austria and Finland joined the EU in 1995. Add that most of the divide might come from austerity measures implemented in Austria, Belgium, Finland, France, Germany, Italy \citep{Alesina2019}. Gabriel et al. 2023 ReStat, show how recessionary were these spending based austerity shocks implemented, also following the Maastricht Treaty.}
+The absence of anticipation effects for the remaining countries may be due to two things. First, the key event representing a change for most European citizens was the irrevocable exchange rate fix on 31st December 1998 and the euro launch on the 1st of January 1999. Second, most of these countries had already experienced trade and economic gains from joining the European Union \citep{Campos2018}. Therefore, such effects lie in our pre-treatment sample and thus, are already being considered.\footnote{Add the fact that Italy dropped the exchange rate agreement and floated for a year 93-94. Add that Austria and Finland joined the EU in 1995. Add that most of the divide might come from austerity measures implemented in Austria, Belgium, Finland, France, Germany, Italy \citep{Alesina2019}. \cite{Gabriel2023} show how recessionary were these spending based austerity shocks implemented, also following the Maastricht Treaty.}
 %Still, these figures should be analysed carefully. For example, the plot for Greece shows some effect that starts even before the placebo treatment of 1992. This anticipated effect seems to be driven by the Greek European Union (EU) accession in 1981 and not from the Euro. 
 %Furthermore, estimates for Austria and Finland must be interpreted carefully as these countries entered the EU exactly in 1995 and the placebo treatment effect may be biased. 
 
@@ -307,14 +307,36 @@ where $x_{1,t}$ denotes the GDP of the treated country at period t; $\vec{x_{0,t
 
 This statistic already allows a quantitative analysis of the treatment effect taking into account the quality of the match produced by the SCM. A small pre-treatment RMSPE implies a good fit of the synthetic series to the actual series and a large post-treatment RMSPE suggests, for the treated units, a large intervention impact. Therefore, obtaining a larger ratio for the treated unit than for the placebo-treated units would entail a significant treatment effect.\footnote{A large post-intervention RMSPE per se is not indicative of a large effect of the intervention. It depends on whether the synthetic control can reproduce closely the outcome of interest prior to the intervention \cite{Abadie2019}.}
 
-Figure \ref{F_RMSPE} depicts this relative measure for the Eurozone countries (black diamonds) and its donors (grey circles). Ireland clearly stands out as the country with the highest RMSPE ratio with a post-intervention gap about 16 times larger than its pre-intervention gap. 
+Table \ref{TA_RMSPE} depicts this relative measure for the Eurozone countries (``Treated" column) and its donors. Ireland stands out as the country with the highest RMSPE ratio with a post-intervention gap about 15 times larger than its pre-intervention gap, followed by Italy, Portugal, Germany, and France. 
 
-\begin{figure}[h!]
-    \centering
-    \caption{\label{F_RMSPE} Ratio between the Post- and Pre-Treatment RMSPE}
-    \includegraphics[scale=0.7]{RMSPE.eps}
-    \annote{The plots show the ratio between the post- and the pre-intervention RMSPE for the treated units (in black diamonds) and all donor countries (in grey circles).}
-\end{figure}
+% \begin{figure}[h!]
+%     \centering
+%     \caption{\label{F_RMSPE} Ratio between the Post- and Pre-Treatment RMSPE}
+%     \includegraphics[scale=0.7]{RMSPE.eps}
+%     \annote{The plots show the ratio between the post- and the pre-intervention RMSPE for the treated units (in black diamonds) and all donor countries (in grey circles).}
+% \end{figure}
+
+\begin{table}[htbp]
+\scriptsize
+\caption{\label{TA_RMSPE} Relative RMSPE of the Pre- and Post-Treatment Doppelganger gaps.}\centering\medskip
+\begin{tabular}{c|cccccccccccccc|c||c} \toprule
+                      & \textit{\textbf{AUS}} & \textit{\textbf{CAN}} & \textit{\textbf{CHL}} & \textit{\textbf{DNK}} & \textit{\textbf{ISL}} & \textit{\textbf{ISR}}  & \textit{\textbf{KOR}} & \textit{\textbf{MEX}} & \textit{\textbf{NZL}} & \textit{\textbf{NOR}} & \textit{\textbf{SWE}} & \textit{\textbf{CHE}} & \textit{\textbf{GBR}} & \textit{\textbf{USA}} & \textit{\textbf{Treated}} & \textit{\textbf{P-Value ($\rho$)}} \\ \midrule
+\textit{\textbf{AUT}} & 2.98 & 5.00 & 2.85 & 4.50 & 1.73 & 1.25 & 2.93 & 4.35 & 3.10 & 7.64 & 4.41 & 3.24 & 1.16 & 3.97 & 3.20  & 0.533  \\
+\textit{\textbf{BEL}} & 2.86 & 4.57 & 2.85 & 5.97 & 3.01 & 1.79 & 2.93 & 4.35 & 3.28 & 5.66 & 4.41 & 3.24 & 1.51 & 5.19 & 3.40  & 0.467 \\
+\textit{\textbf{FIN}} & 2.61 & 5.28 & 2.85 & 4.42 & 2.89 & 1.25 & 2.93 & 4.35 & 3.30 & 7.65 & 3.64 & 3.24 & 1.33 & 3.88 & 1.78  & 0.867 \\
+\textit{\textbf{FRA}} & 2.99 & 2.49 & 2.85 & 4.34 & 1.61 & 1.25 & 2.93 & 4.35 & 3.14 & 7.37 & 2.47 & 3.24 & 1.54 & 4.04 & 4.97  & \textbf{0.133} \\
+\textit{\textbf{DEU}} & 2.80 & 4.74 & 2.85 & 4.98 & 2.88 & 1.25 & 2.93 & 4.35 & 3.30 & 7.65 & 4.40 & 3.24 & 1.22 & 2.86 & 5.98  & \textbf{0.133} \\
+\textit{\textbf{GRC}} & 2.81 & 3.83 & 2.59 & 4.83 & 3.49 & 2.38 & 2.74 & 5.15 & 3.63 & 5.93 & 4.66 & 3.04 & 1.33 & 5.21 & 0.48  & 1.000\\
+\textit{\textbf{IRL}} & 2.81 & 5.34 & 1.04 & 4.37 & 2.00 & 8.16 & 2.93 & 4.35 & 2.81 & 8.77 & 4.40 & 3.24 & 1.82 & 5.19 & 15.51 & \textbf{0.067} \\
+\textit{\textbf{ITA}} & 1.95 & 3.65 & 2.85 & 4.82 & 1.82 & 1.25 & 2.93 & 3.52 & 3.16 & 7.65 & 4.40 & 3.24 & 1.17 & 5.38 & 7.88  & \textbf{0.067} \\
+\textit{\textbf{LUX}} & 2.70 & 5.69 & 2.85 & 5.90 & 1.97 & 1.25 & 2.93 & 4.35 & 2.71 & 7.35 & 4.40 & 3.24 & 2.43 & 3.88 & 3.69  & 0.467  \\
+\textit{\textbf{NLD}} & 2.95 & 5.74 & 2.85 & 7.06 & 2.56 & 1.25 & 2.93 & 4.35 & 2.55 & 7.45 & 4.41 & 3.24 & 1.61 & 3.87 & 1.79  & 0.867  \\
+\textit{\textbf{PRT}} & 3.02 & 5.23 & 2.85 & 4.70 & 3.01 & 1.27 & 2.93 & 3.66 & 2.88 & 7.50 & 4.40 & 3.24 & 1.85 & 3.86 & 6.26  & \textbf{0.133} \\
+\textit{\textbf{ESP}} & 1.95 & 4.84 & 2.85 & 4.81 & 1.77 & 1.25 & 2.93 & 4.35 & 3.24 & 7.65 & 4.40 & 3.24 & 1.77 & 3.92 & 1.45  & 0.933 \\
+\bottomrule
+\end{tabular} 
+\annote{The column \textit{Treated} displays the RMSPE ratio for each country, $\chi$ in equation \ref{EQ_test}. The column \textit{P-Value} displays the chances of obtaining a ratio as high as the treated country if one were to pick a country at random from the sample including also the treated country (equivalent to $\rho$ in equation \ref{EQ_test2}). Given the small number of donor countries, we consider the results sizeable if there are at most 2 countries with a higher RMSPE ratio.}
+\end{table}
 
 We deem the effect of the euro adoption significant if the estimated effect for the treated units is unusually large relative to the distribution of the placebo effects - which is the case for Germany, France, Ireland, Italy, and Portugal. To test this in practice, we follow \cite{Abadie2015} and compute a p-value which compares the value of the RMSPE for the treated country to that of all other units as follows:
 
@@ -325,7 +347,7 @@ We deem the effect of the euro adoption significant if the estimated effect for 
 
 where $I(.)$ denotes the indicator function, $N$ the number of donor countries, $\chi_1$ the RMSPE ratio for the treated unit and $\chi_i$ is the RMSPE ratio for country \textit{i} which can be a donor or the treated country. 
 
-Adding the information from Figure \ref{F_RMSPE} to this test definition, if one were to pick a country at random for the Irish case, the chances of obtaining a ratio as high as the Irish one would be 1 out of 15. The exact same interpretation holds for Italy. For Germany, France, and Portugal the chances of obtaining a ratio as high as their own would be 2 out of 15, which is also a sizeable effect.\footnote{For completeness, Table \ref{TA_RMSPE} presents the RMSPE ratios, ($\chi$), for all countries in the baseline analysis and the correspondent p-values for the treated units.}
+If one were to pick a country at random for the Irish case, the chances of obtaining a ratio as high as the Irish one would be 1 out of 15. The exact same interpretation holds for Italy. For Germany, France, and Portugal the chances of obtaining a ratio as high as their own would be 2 out of 15, the own country and Norway, which is also a sizeable effect.
 
 \subsection{Further Robustness Checks} 
 
@@ -350,26 +372,26 @@ Second, there might have been spillover effects of the treatment on the donor co
 We display this robustness check for countries that weighted, at least, 10\% in the construction of, at least, 2 countries' counterfactuals in Appendix \ref{SS_donor_appendix}. This exercise shows that no particular donor country is driving the main conclusions. So, it is unlikely that there were spillover effects of the treatment on the donors or that one specific country in the donor pool is driving the results.\footnote{The robustness of SCM comes exactly from having similar results using different donors, even if the estimated weights change.}
 %\footnote{For the sake of brevity, the figures for all the remaining countries are not reported, but they can be provided by the authors upon request. The results remain qualitatively unchanged.} So, it is unlikely that spillover effects nor one specific country in the donor pool are driving the results.
 
-\subsubsection{Changes in the Sample Period \label{SS_start}}
+% \subsubsection{Changes in the Sample Period \label{SS_start}}
 
-The credibility of the SCM results severely depends on whether the requirements specified in Section \ref{SS_Implementation} are satisfied. One of these requirements was that countries should not experience differentiated shocks during the sample period. Several analysed countries joined the European Union during the pre-treatment period may concern the most attentive reader. 
+% The credibility of the SCM results severely depends on whether the requirements specified in Section \ref{SS_Implementation} are satisfied. One of these requirements was that countries should not experience differentiated shocks during the sample period. Several analysed countries joined the European Union during the pre-treatment period may concern the most attentive reader. 
 
-For countries that joined the EU at least 10 years before the Eurozone creation, we re-do the estimates using their accession data as the start of our sample, that is, Ireland (1973), Greece (1981), Portugal, and Spain (1986). From Figure \ref{F_Start}, it is possible to conclude that the results from the baseline analysis are robust.
+% For countries that joined the EU at least 10 years before the Eurozone creation, we re-do the estimates using their accession data as the start of our sample, that is, Ireland (1973), Greece (1981), Portugal, and Spain (1986). From Figure \ref{F_Start}, it is possible to conclude that the results from the baseline analysis are robust.
 
-\begin{figure}[h!]
-	\centering
-	\caption{The Impact of the Euro Accession with a Change in the Sample Period}	
-	\label{F_Start}
-    \subfigure{\includegraphics[width=7cm]{Ireland_1973.eps}}
-    \subfigure{\includegraphics[width=7cm]{Greece_1981.eps}}
-    \subfigure{\includegraphics[width=7cm]{Portugal_1986.eps}}
-    \subfigure{\includegraphics[width=7cm]{Spain_1986.eps}}
-    \vspace{-1em}
-	\annote{In each graph, the blue dashed line represents the normalized real GDP for the synthetic country and the black full line represents the series for the actual country. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger prior to the euro accession. The vertical line depicts the treatment period - 1999 for Ireland, Greece, and Portugal and 2001 for Greece. The analysis starts in 1973 for Ireland, 1981 for Greece, and 1986 for Portugal and Spain. For all countries, the analysis ends in 2007.
-    }
-\end{figure}
+% \begin{figure}[h!]
+% 	\centering
+% 	\caption{The Impact of the Euro Accession with a Change in the Sample Period}	
+% 	\label{F_Start}
+%     \subfigure{\includegraphics[width=7cm]{Ireland_1973.eps}}
+%     \subfigure{\includegraphics[width=7cm]{Greece_1981.eps}}
+%     \subfigure{\includegraphics[width=7cm]{Portugal_1986.eps}}
+%     \subfigure{\includegraphics[width=7cm]{Spain_1986.eps}}
+%     \vspace{-1em}
+% 	\annote{In each graph, the blue dashed line represents the normalized real GDP for the synthetic country and the black full line represents the series for the actual country. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger prior to the euro accession. The vertical line depicts the treatment period - 1999 for Ireland, Greece, and Portugal and 2001 for Greece. The analysis starts in 1973 for Ireland, 1981 for Greece, and 1986 for Portugal and Spain. For all countries, the analysis ends in 2007.
+%     }
+% \end{figure}
 
-Unfortunately, it is not possible to re-estimate the results for Austria and Finland because they joined the EU in 1995. Yet, according to \cite{Campos2018}, Austria and Finland were not significantly affected by the EU accession and thus we believe that this does not pose a problem to our analysis.
+% Unfortunately, it is not possible to re-estimate the results for Austria and Finland because they joined the EU in 1995. Yet, according to \cite{Campos2018}, Austria and Finland were not significantly affected by the EU accession and thus we believe that this does not pose a problem to our analysis.
 
 
 \section{Unpacking the GDP gap \label{S_Components}}
@@ -414,11 +436,11 @@ Figure \ref{F_Decomposition} depicts, for each country, the percent GDP gap in 2
     \label{F_Decomposition}
 \end{figure}
 
-\textbf{Countries that implemented spending-based austerity measures between 1992 and 1998} Austria, Belgium, Germany, Spain, Finland, France, Italy
+\textbf{Countries that implemented spending-based austerity measures between 1992 and 1998} Austria, Belgium, Germany, Spain, Finland, France, Italy with potentially recessionary effects being captured in the in time placebo exercise according to evidence provided by \cite{Gabriel2023}.
 
 \textbf{Countries that did not implement spending-based austerity measures between 1999 and 2007} Austria, Belgium, Spain, Finland, France,
 
-Italy and Portugal did implement strong austerity measures between 2004 and 2006 accounting for more than 3\% of GDP in total for each country.
+Italy and Portugal did implement strong austerity measures between 2004 and 2006 accounting for more than 3\% of GDP in total for each country \cite{Alesina2019}.
 
 We now take a deeper look into the countries which were significantly affected as argued in Section \ref{SS_Causality}. For Ireland, joining the Eurozone boosted GDP by 39\%. Even though all GDP components contribute positively to this result, the private consumption and investment together can explain almost 80\% of the total output gain from the treatment.
 
@@ -458,11 +480,24 @@ While the activities of these multinational corporations contribute significantl
 \begin{figure}[h!]
     \centering
     \caption{The Impact of the Eurozone Accession - Gross National Income per capita}
-    \includegraphics[width=\textwidth]{Output/Figures/SCM_gnipc_Annual.pdf}
+    \includegraphics[width=\textwidth]{Output/Figures/SCM_GNI_Annual.pdf}
     \annote{In each graph, the dashed line represents the inflation rate for the synthetic country and the continuous line represents the series for the actual country. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger before the euro accession. The vertical line represents the treatment period - 1999 for all countries except for Greece which is 2001. For each country, the analysis starts in 1970 and ends in 2007.}
     \label{F_GNI}
 \end{figure}
 
+\begin{table}[h!]
+\scriptsize
+\caption{\label{TA_Gap_GNI} Doppelganger GNI Gap}\centering
+\begin{tabular}{lcccccccccccc} 
+\toprule
+ & \textbf{AUT}  & \textbf{BEL}  & \textbf{FIN}  & \textbf{FRA}  & \textbf{DEU}  & \textbf{GRC}  & \textbf{IRL}  & \textbf{ITA}  & \textbf{LUX}  & \textbf{NLD}  & \textbf{PRT}  & \textbf{ESP} \\
+ \midrule  
+\textbf{GNI Gap} & \multirow{2}{*}{-6,793} & \multirow{2}{*}{-1,970} & \multirow{2}{*}{2,096} & \multirow{2}{*}{-5,885} & \multirow{2}{*}{-6,912} & \multirow{2}{*}{--} & \multirow{2}{*}{4,235} & \multirow{2}{*}{-7,048} & \multirow{2}{*}{--} & \multirow{2}{*}{-2,602} & \multirow{2}{*}{-5,028} & \multirow{2}{*}{-346} \\
+(\texteuro \ per capita) &  &  &  &  &  & &  & &  & &  &  \\
+\bottomrule
+\end{tabular}
+\annote{This table presents the doppelganger gni gap per capita in 2007. This measure is obtained by adjusting the real GNI gap which is currently in 2015 USD. We use the conversion rate available from the PWT 9.1 for this year ($\approx 0.73$).}
+\end{table}
 
 \section{Conclusion \label{S_Conclusion}}
 In this paper, we study the impact of the EMU accession on the macroeconomic performance of the first twelve member states. We use the synthetic control method to construct a counterfactual of these countries' GDP. This method allows building a doppelganger that should represent the economic activity of these countries in the absence of the euro adoption. 
@@ -752,7 +787,7 @@ United States &        $<0.1$ &       $<0.1$ &     $<0.1$ &     6.2 &      22.1 
 \textit{\textbf{ESP}} & 1.95 & 4.84 & 2.85 & 4.81 & 1.77 & 1.25 & 2.93 & 4.35 & 3.24 & 7.65 & 4.40 & 3.24 & 1.77 & 3.92 & 1.45  & 0.933 \\
 \bottomrule
 \end{tabular} 
-\annote{The column \textit{Treated} displays the RMSPE ratio for each country, $\chi$ in equation \ref{EQ_test}. The column \textit{P-Value} tell us the chances of obtaining a ratio as high as the treated country if one were to pick a country at random from the sample including also the treated country (equivalent to $\rho$ in equation \ref{EQ_test2}). Given the small number of donor countries, we consider the results sizeable if there at most 2 countries with a higher RMSPE ratio.}
+\annote{The column \textit{Treated} displays the RMSPE ratio for each country, $\chi$ in equation \ref{EQ_test}. The column \textit{P-Value} displays the chances of obtaining a ratio as high as the treated country if one were to pick a country at random from the sample including also the treated country (equivalent to $\rho$ in equation \ref{EQ_test2}). Given the small number of donor countries, we consider the results sizeable if there at most 2 countries with a higher RMSPE ratio.}
 \end{table}
 
 \end{landscape}
@@ -763,19 +798,19 @@ United States &        $<0.1$ &       $<0.1$ &     $<0.1$ &     6.2 &      22.1 
 \begin{figure}[h!]
     \centering
     \caption{In-Time Placebo Test - 1995 \label{F_1995}}
-    \includegraphics[scale=1.2]{Maastricht_1995.eps}
+    \includegraphics[scale=1]{Output/Figures/SCM_gdp_Rob_1995_Annual.pdf}
     \annote{In each graph, the blue dashed line represents the normalized real GDP for the synthetic country and the black full line represents the series for the actual country. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger prior to the euro accession. The vertical line depicts the placebo treatment period - 1995 for all countries. For all countries the analysis starts in 1970 and ends in 2007. 
     %This date is particularly useful to analyze because it is the one used by \cite{Puzzello2018}. The reasons on why we do not use it are explained in the main text with the most compelling being that Austria and Finland are being analyzed in our work but they joined the EU in 1995. %The baseline specification has as predictors labor productivity growth, employment share, and GDP shares from PENN Tables 9.1 data. OECD restricted donor pool.
     }
 \end{figure}
-\clearpage 
-\begin{figure}[h!]
-    \centering
-    \caption{In-Time Placebo Test - 1998 \label{F_1998}}
-    \includegraphics[scale=1.2]{Maastricht_1998.eps}
-    \annote{In each graph, the blue dashed line represents the normalized real GDP for the synthetic country and the black full line represents the series for the actual country. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger prior to the euro accession. The vertical line depicts the placebo treatment period - 1998 for all countries. For all countries the analysis starts in 1970 and ends in 2007.
-    }
-\end{figure}
+% \clearpage 
+% \begin{figure}[h!]
+%     \centering
+%     \caption{In-Time Placebo Test - 1998 \label{F_1998}}
+%     \includegraphics[scale=1.2]{Output/Figures/SCM_gdp_Rob_1998_Annual.pdf}
+%     \annote{In each graph, the blue dashed line represents the normalized real GDP for the synthetic country and the black full line represents the series for the actual country. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger prior to the euro accession. The vertical line depicts the placebo treatment period - 1998 for all countries. For all countries the analysis starts in 1970 and ends in 2007.
+%     }
+% \end{figure}
 
 
 \subsection{Changing Donor Pool \label{SS_donor_appendix}}
@@ -783,25 +818,25 @@ In each of the following set of graphs, the blue dashed line represents the norm
 
 \begin{figure}[h!]
     \centering
-    \label{F_AUS}
-    \caption{SCM without Australia}
-    \includegraphics[scale=0.7]{SCM_without_AUS.eps}
-     \annote{In each graph, the blue dashed line represents the normalized real GDP for the synthetic country and the black full line represents the series for the actual country. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger prior to the euro accession. The vertical line depicts the placebo treatment period - 2001 for Greece and 1999 for all other countries. For all countries the analysis starts in 1970 and ends in 2007. Australia is excluded from the donor pool. }
+    \label{F_CAN}
+    \caption{SCM without Canada}
+    \includegraphics[scale=0.7]{Output/Figures/SCM_gdp_Rob_1999_Annual_CAN.pdf}
+     \annote{In each graph, the blue dashed line represents the normalized real GDP for the synthetic country and the black full line represents the series for the actual country. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger prior to the euro accession. The vertical line depicts the placebo treatment period - 2001 for Greece and 1999 for all other countries. For all countries the analysis starts in 1970 and ends in 2007. Canada is excluded from the donor pool. }
 \end{figure}
 
 \begin{figure}[h!]
     \centering
-    \label{F_AUS}
-    \caption{SCM without Australia}
-    \includegraphics[scale=0.7]{SCM_without_AUS.eps}
-     \annote{In each graph, the blue dashed line represents the normalized real GDP for the synthetic country and the black full line represents the series for the actual country. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger prior to the euro accession. The vertical line depicts the placebo treatment period - 2001 for Greece and 1999 for all other countries. For all countries the analysis starts in 1970 and ends in 2007. Australia is excluded from the donor pool. }
+    \label{F_CHL}
+    \caption{SCM without Chile}
+    \includegraphics[scale=0.7]{Output/Figures/SCM_gdp_Rob_1999_Annual_CHL.pdf}
+     \annote{In each graph, the blue dashed line represents the normalized real GDP for the synthetic country and the black full line represents the series for the actual country. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger prior to the euro accession. The vertical line depicts the placebo treatment period - 2001 for Greece and 1999 for all other countries. For all countries the analysis starts in 1970 and ends in 2007. Chile is excluded from the donor pool. }
 \end{figure}
 
 \begin{figure}[h!]
     \centering
     \label{F_ISR}
     \caption{SCM without Israel}
-    \includegraphics[scale=0.7]{SCM_without_ISR.eps}
+    \includegraphics[scale=0.7]{Output/Figures/SCM_gdp_Rob_1999_Annual_ISR.pdf}
          \annote{In each graph, the blue dashed line represents the normalized real GDP for the synthetic country and the black full line represents the series for the actual country. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger prior to the euro accession. The vertical line depicts the placebo treatment period - 2001 for Greece and 1999 for all other countries. For all countries the analysis starts in 1970 and ends in 2007. Israel is excluded from the donor pool. }
 \end{figure}
 
@@ -809,7 +844,7 @@ In each of the following set of graphs, the blue dashed line represents the norm
     \centering
     \label{F_MEX}
     \caption{SCM without Mexico}
-    \includegraphics[scale=0.7]{SCM_without_MEX.eps}
+    \includegraphics[scale=0.7]{Output/Figures/SCM_gdp_Rob_1999_Annual_MEX.pdf}
          \annote{In each graph, the blue dashed line represents the normalized real GDP for the synthetic country and the black full line represents the series for the actual country. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger prior to the euro accession. The vertical line depicts the placebo treatment period - 2001 for Greece and 1999 for all other countries. For all countries the analysis starts in 1970 and ends in 2007. Mexico is excluded from the donor pool. }
 \end{figure}
 
@@ -817,7 +852,7 @@ In each of the following set of graphs, the blue dashed line represents the norm
     \centering
     \label{F_NOR}
     \caption{SCM without Norway}
-    \includegraphics[scale=0.7]{SCM_without_NOR.eps}
+    \includegraphics[scale=0.7]{Output/Figures/SCM_gdp_Rob_1999_Annual_NOR.pdf}
          \annote{In each graph, the blue dashed line represents the normalized real GDP for the synthetic country and the black full line represents the series for the actual country. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger prior to the euro accession. The vertical line depicts the placebo treatment period - 2001 for Greece and 1999 for all other countries. For all countries the analysis starts in 1970 and ends in 2007. Norway is excluded from the donor pool. }
 \end{figure}
 
@@ -825,17 +860,19 @@ In each of the following set of graphs, the blue dashed line represents the norm
     \centering
     \label{F_CHE}
     \caption{SCM without Switzerland}
-    \includegraphics[scale=0.7]{SCM_without_CHE.eps}
+    \includegraphics[scale=0.7]{Output/Figures/SCM_gdp_Rob_1999_Annual_CHE.pdf}
          \annote{In each graph, the blue dashed line represents the normalized real GDP for the synthetic country and the black full line represents the series for the actual country. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger prior to the euro accession. The vertical line depicts the placebo treatment period - 2001 for Greece and 1999 for all other countries. For all countries the analysis starts in 1970 and ends in 2007. Switzerland is excluded from the donor pool. }
 \end{figure}
 
-\begin{figure}[h!]
-    \centering
-    \label{F_USA}
-    \caption{SCM without the United States}
-    \includegraphics[scale=0.7]{SCM_without_USA.eps}
-             \annote{In each graph, the blue dashed line represents the normalized real GDP for the synthetic country and the black full line represents the series for the actual country. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger prior to the euro accession. The vertical line depicts the placebo treatment period - 2001 for Greece and 1999 for all other countries. For all countries the analysis starts in 1970 and ends in 2007. The United States is excluded from the donor pool. }
-\end{figure}
+% \begin{figure}[h!]
+%     \centering
+%     \label{F_USA}
+%     \caption{SCM without the United States}
+%     \includegraphics[scale=0.7]{SCM_without_USA.eps}
+%              \annote{In each graph, the blue dashed line represents the normalized real GDP for the synthetic country and the black full line represents the series for the actual country. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger prior to the euro accession. The vertical line depicts the placebo treatment period - 2001 for Greece and 1999 for all other countries. For all countries the analysis starts in 1970 and ends in 2007. The United States is excluded from the donor pool. }
+% \end{figure}
+
+\clearpage
 
 \section{\label{SS_Components} Components Analysis}
 
