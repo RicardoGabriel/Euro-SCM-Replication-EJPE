@@ -38,7 +38,7 @@
 
 
 \author{\hspace{-2em} Ricardo Duque Gabriel\footnote{Corresponding author: Federal Reserve Board. E-mail address: ricardofilipeduquegabriel@gmail.com} \hspace{5em} Ana Sofia Pessoa\footnote{University of Bonn. E-mail address: sofiamendespessoa@gmail.com}\\ \hspace{-1em} Federal Reserve Board \hspace{5em} University of Bonn}
-%\date{December, 2020} 
+\date{January, 2024} 
 
 \begin{document}
 \begin{titlepage}
@@ -47,7 +47,7 @@
 \thispagestyle{empty}
 \vspace{-3em}
 \begin{abstract}
-We investigate whether joining the European Monetary Union and losing the ability to set monetary policy affected the economic growth of Eurozone countries. We use the synthetic control approach to create a counterfactual scenario for how each Eurozone country would have evolved without adopting the euro. We let this matching algorithm determine which combination of other developed economies best resembles the pre-euro path of twelve Eurozone economies. Our estimates suggest that most countries' economic growth was not significantly affected. There were some mild losers (France, Germany, Italy, and Portugal) and a clear winner (Ireland). Nevertheless, the drivers of the economic gains and losses are heterogeneous. First, we find Ireland's economic gains are more modest when excluding profits and income earned by foreigners. Second, our results show that adopting the euro spurred government consumption and deterred private consumption. The common currency also stimulated trade in most cases but only Luxembourg bears positive net trade benefits.
+We investigate whether joining the European Monetary Union and losing the ability to set monetary policy affected the economic growth of Eurozone countries. We use the synthetic control approach to create a counterfactual scenario for how each Eurozone country would have evolved without adopting the euro. We let this matching algorithm determine which combination of other developed economies best resembles the pre-euro path of twelve Eurozone economies. Our estimates suggest that most countries' economic growth was not significantly affected. There were some mild losers (France, Germany, Italy, and Portugal) and a clear winner (Ireland). The drivers of these economic gains and losses are heterogeneous. First, we find that Ireland's economic gains are more modest when excluding profits and income earned by foreigners. Second, our results show that adopting the euro spurred government consumption and trade and deterred private consumption and investment, on average. 
 \end{abstract}
 
 \vspace{1ex}
@@ -59,24 +59,26 @@ We investigate whether joining the European Monetary Union and losing the abilit
 
 \clearpage
 
+\doublespacing
+
 \indent ``For all the seven long years since the signing of the Maastricht treaty started Europe on the road to that unified currency, critics have warned that the plan was an invitation to disaster." \cite{Krugman1998}
 
 \section{Introduction}
 
-In January 1999, the exchange rates between member countries’ national currencies and the euro were fixed irrevocably and the European Central Bank (ECB) officially took over the responsibility of conducting the unified monetary policy. Twenty-five years have passed since the euro was launched and the member states gave up their monetary policy independence. A single currency could potentially boost economic growth by eliminating exchange rate risks, facilitating flows of goods, people, and capital, and promoting competition and economic integration of the member states. In this work, we evaluate whether joining the euro had any macroeconomic effect for twelve of the Eurozone countries and investigate which were the channels driving this effect.
+In January 1999, the exchange rates between member countries’ national currencies and the euro were fixed irrevocably and the European Central Bank (ECB) officially took over the responsibility of conducting the unified monetary policy. Twenty-five years have passed since the euro was launched and the member states gave up their monetary policy independence. A single currency could have potentially boosted economic growth by eliminating exchange rate risks, facilitating flows of goods, people, and capital, and promoting competition and economic integration of the member states. In this work, we evaluate whether joining the euro had any macroeconomic effect for twelve of the Eurozone countries and investigate which were the channels driving it.
 
 To address this question, we develop a counterfactual scenario that represents how each Eurozone country would have evolved without adopting the euro as their currency. For this analysis, we employ what is arguably the most important innovation in the policy evaluation literature in the last fifteen years - the synthetic control method (SCM) \citep{Athey2017}. We let this matching algorithm determine which combination of other OECD advanced economies best resembles the pre-euro path of each Eurozone member. We then compare the post-euro macroeconomic performance of each economy to its synthetic doppelganger. In particular, by decomposing the countries' and the doppelgangers' gross domestic product (GDP) into their components, we identify the main drivers of the accession gains and losses.
 
 In the context of the Eurozone, it was expected that adopting a common currency would reduce the exchange rate volatility, the transaction costs, and any price discrimination \citep{DeGrauwe2020}. Most likely, it would spur trade and investment within the Eurozone \citep{Frankel1998}. Notwithstanding, since its announcement, many have been calling into question the success of the euro \citep{Wyplosz2006}. They believed that the Eurozone did not satisfy the requirements of an Optimum Currency Area, especially due to the lack of labor mobility \citep{Jonung2009}. Additionally, the Eurozone countries could no longer set monetary policy independently thus becoming more exposed to external (asymmetric) shocks. Nowadays, the rising strength of nationalism movements in Europe has intensified doubts about the advantages of the Eurozone \citep{Fligstein2012, Guiso2019}. Some of the arguments put forward are the loss of sovereignty and the suitability of the ``one-size-fits-all" monetary policy. %Moreover, the recent developments of the Covid-19 pandemic in Europe have highlighted the lack of solidarity, ability and, in some cases, the willingness of the Eurozone to take action during such fragile and crucial moments. 
 
-Our contribution is two-fold. First, we evaluate the macroeconomic impact of adopting the euro measured by the real gross domestic product (GDP). Theoretical predictions about this effect are ambiguous and depend on whether the costs outweigh the benefits of joining the Eurozone.\footnote{We refer the reader to \cite{Lane2006} and \cite{Beetsma2010} who provide a more recent account of the real effects of the European Monetary Union by surveying the literature on its macroeconomic costs and benefits.} Indeed, we find that there are some mild losers (France, Germany, Italy, and Portugal) and a clear winner (Ireland). Such heterogeneous findings are in line with  \cite{DeGrauwe2020} and \cite{Puzzello2018}.
+Our contribution is two-fold. First, we evaluate the macroeconomic impact of adopting the euro measured by the real GDP. Theoretical predictions about this effect are ambiguous and depend on whether the costs outweigh the benefits of joining the Eurozone.\footnote{We refer the reader to \cite{Lane2006} and \cite{Beetsma2010} who provide a more recent account of the real effects of the European Monetary Union by surveying the literature on its macroeconomic costs and benefits.} Indeed, we find that there are some mild losers (France, Germany, Italy, and Portugal) and a clear winner (Ireland). Such heterogeneous findings are in line with previous work on the topic \citep{DeGrauwe2020,Puzzello2018}.
 
-Most notably, we perform a GDP decomposition exercise to investigate which channels drove the output gains and losses and whether they differed from country to country. For Ireland, private consumption and investment notably explain almost 80\% of the total output gain from joining the euro. While for France and Portugal, private consumption and net exports accounted for a large share of the economic loss, in the case of Germany and Italy, private consumption and investment explain the negative impact of the Euro. For most countries, the trade volume was significantly higher than if they had not joined the Eurozone. Nonetheless, the common currency had a positive impact on the trade balance solely for Germany and Ireland.
+Most notably, we perform a GDP decomposition exercise to investigate which channels drove the output gains and losses and whether they differed from country to country. For Ireland, private consumption and investment notably explain almost 80\% of the total output gain from joining the euro. While for France and Portugal, private consumption and net exports accounted for a large share of the economic loss, in the case of Germany and Italy, private consumption and investment explain the negative impact of the euro. For most countries, the trade volume was significantly higher than if they had not joined the Eurozone. Nonetheless, the common currency had a strong positive impact on the trade balance solely for Luxembourg.
 
 %\textbf{Literature Review:} 
 \textbf{Literature Review.} This paper is related to several strands of the literature. The first one is directly related to the methodology used to construct the counterfactuals. To employ the SCM, we follow the original work by \cite{Abadie2003} and  \cite{Abadie2010, Abadie2015} who developed the methodology.\footnote{A good overview of the literature using this methodology can be found in \cite{Abadie2019}.} Furthermore, we follow more recent work by \cite{Campos2018} who evaluate the impact of the European Union accession, \cite{Born2019} who assess the macroeconomic impact of the election of Donald Trump as the President of the USA, and finally \cite{Breinlich2020} and \cite{Born2018} who study the costs of economic nationalism by looking at the Brexit vote impact on the transactions and GDP, respectively.
 
-The second strand of the literature relates to the political economy of monetary unions. We build on work by \cite{Eichengreen1993,  Feldstein1997, Dyson1999, Willett2000, James2012}; and  \cite{Spolaore2013} who find that countries adopted the Euro because of political rather than economic motivations, to rule out reverse causality and study the macroeconomic impact of joining the Euro.
+The second strand of the literature relates to the political economy of monetary unions. We build on work by \cite{Eichengreen1993,  Feldstein1997, Dyson1999, Willett2000, James2012}; and  \cite{Spolaore2013} who find that countries adopted the euro because of political rather than economic motivations, to rule out reverse causality and study the macroeconomic impact of joining the euro.
 
 This paper also contributes to the literature that studies the macroeconomic impact of joining a currency union. Starting from the groundbreaking contribution of \cite{Mundell1961} on the theory of optimal currency areas, many economists have been studying the key characteristics that allow a group of countries to benefit from having the same currency. \cite{McKinnon1963} and \cite{Kenen1969} have added seminal contributions to this theory by exploring the role of international trade and diversified output structures in determining the costs and benefits of joining a monetary union.
 
@@ -84,12 +86,11 @@ More recent work from \cite{Alesina2002} explains that forgoing monetary policy,
 
 There is also a broad literature that empirically tests these theoretical links. At about the time the euro was launched, \cite{Rose2000} famously estimated that a currency union could boost up to three times bilateral trade. The relevance of these results to the euro case was immediately doubted since the sample used for the analysis was based on unions of small, poor, and remote countries. \cite{Micco2003} developed the first comprehensive study for the impact of the European Monetary Union (EMU) on trade, concluding that the euro had a positive impact not only on trade between member states but also with third parties. Some papers have also highlighted the impact of currency unions on investment. Among others, \cite{Barr2003} suggest that inward investment in the countries outside the union would have been greater if they had joined the EMU. Furthermore, \cite{DeSousa2011} estimate that, in the Eurozone countries, investment increased with the single currency adoption.
 
-Finally, this paper closely relates to the recent literature about the euro adoption using the synthetic control approach \citep{Fernandez2015, Verstegen2017, Gasparotti2019} but makes three important contributions. First, we build directly on the work of \cite{Puzzello2018} by extending their analysis from six to the twelve member states that joined the Eurozone before 2007. This contributes to a comprehensive picture of the macroeconomic effects of the Euro accession. 
+Finally, this paper closely relates to the recent literature about the euro adoption using the synthetic control approach \citep{Fernandez2015, Verstegen2017, Gasparotti2019} but makes three important contributions. First, we build directly on the work of \cite{Puzzello2018} by extending their analysis from six to the twelve member states that joined the Eurozone before 2007. This contributes to a comprehensive picture of the macroeconomic effects of the euro accession. 
 
-Second, this paper further adds to the existing literature by unpacking the results of the economic gains and losses of the euro accession. In particular, our results show that, for the majority of Eurozone countries, adopting the euro deterred investment and private consumption, but spurred trade and government consumption. There seems to be a negative link between fiscal spending before and after the Euro adoption. Most countries in the sample implemented spending-based austerity measures after the Maastricht Treaty in line with the Stability and Growth Pact (SGP) \citep{Alesina2019}. This has likely created fiscal space which together with access to cheaper credit promoted an increase in government consumption beyond what would have happened absent the Euro adoption. For the few countries that did not consolidate spending before the Euro accession. government consumption was lower than without the Euro.
+Second, this paper further adds to the existing literature by unpacking the results of the economic gains and losses of the euro accession. In particular, our results show that, for the majority of Eurozone countries, adopting the euro deterred investment and private consumption, but spurred trade and government consumption. Moreover, there seems to be a negative link between fiscal spending before and after the euro adoption. Most countries in the sample implemented spending-based austerity measures after the Maastricht Treaty \citep{Alesina2019}. This has likely created fiscal space which together with access to cheaper credit promoted an increase in government consumption beyond what would have happened absent the euro adoption. %Italy and Portugal did consolidate spending after the euro accession, government consumption was lower than without the Euro.
 
-Third, this paper adds the drivers of Ireland's large economic gains following the Euro adoption. When extending the baseline analysis to the Gross National Income (GNI),  Ireland's economic gains from the Euro adoption, though still positive, become more modest. This means that the large Irish economic gains measured by GDP are closely related to the activities of these multinational corporations that contribute significantly more to GDP--through the production and services rendered within the country--than to GNI, as a large portion of their profits are repatriated to foreign investors or parent companies abroad. 
-
+Third, this paper adds the drivers of Ireland's large economic gains following the euro adoption. When extending the baseline analysis to the Gross National Income (GNI),  Ireland's economic gains from the euro adoption, though still positive, become more modest and reduced by more than two-thirds. This means that the large Irish economic gains measured by GDP are closely related to the activities of these multinational corporations that contribute significantly more to GDP---through the production and services rendered within the country---than to GNI, as a large portion of their profits are repatriated to foreign investors or parent companies abroad. 
 
 The remainder of this paper is organized as follows. Section \ref{S_Doppelganger} describes the construction of the doppelganger, its implementation, and the data used. Section \ref{S_results} presents the results and robustness exercises. Section \ref{S_Components} explores the potential channels through which the euro adoption affected the GDP. We briefly conclude in Section \ref{S_Conclusion}.
 
@@ -116,7 +117,7 @@ where $w_i$ is the estimated weight assigned to donor country \textit{i} to cons
 
 The weights are chosen to minimize the difference between each treated unit and its doppelganger's pre-intervention outcome variable and predictors. 
 
-Aiming to study the macroeconomic impact of the Euro accession, we use real GDP as the main outcome variable of this analysis. First, real GDP is one of the most important metrics to assess countries' degree of real convergence and economic growth. Second, it allows us to unpack the baseline result by studying how each GDP component changed after the Euro accession. \footnote{Using GDP per capita as the outcome variable yields similar results. See Figure \ref{F_normgdppc} in the appendix.} Following Born et al. (\citeyear{Born2018}, \citeyear{Born2019}), we normalize real GDP to unity in the first sample year, 1970. \footnote{Focusing on the normalized per capita real GDP instead does not qualitatively change the results.}  
+Aiming to study the macroeconomic impact of the euro accession, we use real GDP as the main outcome variable of this analysis. First, real GDP is one of the most important metrics to assess countries' degree of real convergence and economic growth. Second, it allows us to unpack the baseline result by studying how each GDP component changed after the euro accession. Following Born et al. (\citeyear{Born2018}, \citeyear{Born2019}), we normalize real GDP to unity in the first sample year, 1970.\footnote{Focusing on the normalized per capita real GDP instead does not qualitatively change the results (Figure \ref{F_normgdppc}).}  
 
 Moreover, the set of predictors used is based on \cite{Abadie2003} and \cite{Born2019}. These predictors are the average GDP shares of private consumption, government consumption, investment, exports, imports, the employed share of the population, the labor productivity growth, the inflation rate, the real GDP and its lags.\footnote{We avoid the so-called cherry-picking problem in \cite{Ferman2017} by choosing a standard set of predictors based on previous empirical literature.}
 
@@ -142,9 +143,9 @@ where $\vec{V}$ is a ($14 \times 14$) symmetric and positive semidefinite weight
 
 \subsubsection{Implementation \label{SS_Implementation}}
 
-The SCM offers several advantages to study the question at hand. This method is transparent regarding the construction of the counterfactual and the fit of the control unit to the treated unit. It provides the exact weight of each donor country for the construction of the doppelganger. The fit of the counterfactual can be inspected by comparing the outcome variable and other characteristics of the treated unit with the estimated data. It is also important to highlight that this method allows the design decisions, like the choice of donor pool and predictors, to be made regardless of post-treatment considerations and without knowing the implication for the results. Moreover, the SCM precludes extrapolation since the estimated weights are non-negative and sum to one.\footnote{See \cite{King2006} for more information about the dangers of relying on extrapolation to estimate counterfactuals}
+The SCM offers several advantages to study the question at hand. This method is transparent regarding the construction of the counterfactual and the fit of the control unit to the treated unit. It provides the exact weight of each donor country for the construction of the doppelganger. The fit of the counterfactual can be inspected by comparing the outcome variable and other characteristics of the treated unit with the estimated data. It is also important to highlight that this method allows the design decisions, like the choice of donor pool and predictors, to be made regardless of post-treatment considerations and without knowing the implication for the results. Moreover, the SCM precludes extrapolation since the estimated weights are non-negative and sum to one \citep{King2006}.
 
-To successfully implement the SCM several contextual and data requirements should be satisfied.\footnote{See \cite{Abadie2019} for more detail on these requirements.} Especially for estimating causal effects, the credibility of the results severely depends on whether these requirements are met in the empirical application at hand. Therefore, we now present these requirements and how we address them. 
+To successfully implement the SCM several contextual and data requirements should be satisfied \citep{Abadie2019}. Especially for estimating causal effects, the credibility of the results severely depends on whether these requirements are met in the empirical application at hand. Therefore, we now present these requirements and how we address them. 
  
 First, treated units and the donor countries should be comparable. The counterfactual should be identical to the treated unit in all dimensions except for the treatment assignment. When the treated unit is a country, an ``ideal" control unit rarely exists in observed data because countries differ widely across demographic, legislative, and economic characteristics \citep{Born2018}. Yet, the donor pool selection should try to accommodate this need. 
 
@@ -154,13 +155,13 @@ It is important to restrict the donor pool to units with outcomes that are expec
 
 Secondly, since the counterfactual weights are constructed according to the pre-intervention characteristics, we have to ensure that there are no (external) differentiated shocks during the study period in the donor pool countries \citep{Abadie2019}. To account for this, we only consider observations until 2007. From 2008 onward, the great financial recession and the European sovereign debt crisis affected countries in very different ways and might have caused structural changes in the affected economies. While before the great recession, there were no major differences in average economic growth, after 2008 treated units grew on average much slower than the donor pool countries. 
 
-It is also important to exclude any country that was treated from the donor pool. In this context, this is addressed by using only donor countries that never adopted the Euro. Yet, Denmark, Sweden, and the UK, which belonged to the European Union (EU) but did not adopt the Euro, are included in the donor sample. One important consideration is that, even though the euro adoption and the EU accession are intertwined, the cumulative gains of entering the EU stopped before 1999 for Denmark and the UK and are insignificant for Sweden according to \cite{Campos2018}. 
+It is also important to exclude any country that was treated from the donor pool. In this context, this is addressed by using only donor countries that never adopted the Euro. Yet, Denmark, Sweden, and the UK, which belonged to the European Union (EU) but did not adopt the Euro, are included in the donor sample. One important consideration is that, even though the euro adoption and the EU accession are intertwined, the cumulative gains of entering the EU stopped before 1999 for Denmark and the UK and are insignificant for Sweden \citep{Campos2018}. 
 
 Furthermore, policy interventions frequently have spillover effects on non-treated units. When employing the SCM, it is important to ensure that the counterfactuals are not affected by the treatment. In our analysis, this is equivalent to ruling out the possibility that the euro adoption by an individual country affected the outcome variable of the donor countries. This assumption is tested by performing in-space placebo tests in section \ref{SS_spaceplacebo}.
 
 Fourth, the intervention does not affect the outcome before the implementation period. In section \ref{SS_timeplacebo}, potential anticipation effects are tested by changing the treatment date used in the analysis.
 
-Fifth, the SCM requires a sizable number of pre- and post-intervention periods. In the literature, previous SCM applications with yearly data use between 20 \citep{Abadie2003} and 30 pre-treatment periods \citep{Abadie2015}. The reason is that the credibility of a synthetic control depends upon how well it tracks the treated unit’s characteristics and outcomes over an extended period of time prior to the treatment. The post-treatment period should be long enough to account for delayed or dissipated effects of the intervention. These requirements are satisfied with the data used in the analysis as discussed next in section \label{SS_Data}.
+Fifth, the SCM requires a sizable number of pre- and post-intervention periods. In the literature, previous SCM applications with yearly data use between 20 \citep{Abadie2003} and 30 pre-treatment periods \citep{Abadie2015}. The reason is that the credibility of a synthetic control depends upon how well it tracks the treated unit’s characteristics and outcomes over an extended period of time prior to the treatment. The post-treatment period should be long enough to account for delayed or dissipated effects of the intervention. These requirements are satisfied with the data used in the analysis as discussed next in section \ref{SS_Data}.
 
 Finally, it is important to guarantee that there are no extreme values in the variable of interest for the treated units. The SCM is based on the idea that a combination of unaffected units can approximate the pre-intervention characteristics of the affected unit. However, if the treated unit exhibits ``extreme" values for the outcome variable this is not possible. We address this issue by normalizing real GDP \citep{Born2018}.  
 
@@ -185,24 +186,21 @@ This section starts by presenting the baseline results for the impact of the eur
 
 It is expected that the SCM yields an imperfect pre-treatment match for some countries given that our procedure determines 14 parameters (country weights) to match 37 observations. Notwithstanding, this methodology can provide substantial improvement relative to alternative methods as differences-in-differences \citep{Ferman2019}, and thus, we are confident that this data-driven approach is the best to study the problem at hand.
 
-Table \ref{TA_weights} displays the donor country weights that constitute each doppelganger. For instance, the synthetic Spain is composed by all countries in the donor pool, and yet it is significantly constructed by using data from the United States (46\%), Mexico (19\%), Switzerland (18\%), and Australia (16\%). We are overall confident on the plausibility and credibility of the methodology weighting scheme.\footnote{Potential concerns regarding the use of countries that belong to the Exchange Rate Mechanism (Denmark, Sweden, and the United Kingdom) are addressed in Section \ref{SS_donor}.}
+Figure \ref{F_1} displays the real GDP for each country (full black line) and doppelganger (dashed blue line) presented as the deviation from the first year of the sample in percent. The shaded area represents two standard deviations of the pre-treatment difference between the actual and the counterfactual series. When the doppelganger series deviates from the realized path in such a way that exceeds these bounds, it indicates that such deviation is non-standard compared to the pre-euro period.
 
-Table \ref{TA_comp} shows that doppelgangers are very similar to the actual countries when comparing their predictors means despite using the same specification for all countries.\footnote{Matching only the key variable might suffice but having further similarities in related variables is also important and ensures the robustness of the findings \cite{Botosaru2019}.} Furthermore, in Appendix \ref{SS_Components}, we show that the doppelgangers are successful in recovering the time path of all GDP components for most of the analyzed countries.
 
 \begin{figure}[h!]
     \centering
     \caption{The Impact of the Eurozone Accession}
+    \label{F_1}
     \includegraphics[scale=1.15]{SCM_gdp_Annual.pdf}
     \annote{In each graph, the dashed line represents the normalized real GDP for the synthetic country and the continuous line represents the series for the actual country. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger prior to the euro accession. The vertical line represents the treatment period - 1999 for all countries except for Greece which is 2001. For each country, the analysis starts in 1970 and ends in 2007.
     }
-    \label{F_1}
 \end{figure}
-
-Figure \ref{F_1} displays the real GDP for each country (full black line) and doppelganger (dashed blue line) presented as the deviation from the first year of the sample in percent. The shaded area represents two standard deviations of the pre-treatment difference between the actual and the counterfactual series. When the doppelganger series deviates from the realized path in such a way that exceeds these bounds, it indicates that such deviation is non-standard compared to the pre-euro period.
 
 A number of observations stand out. The pre-treatment paths for most countries and their doppelgangers are overlapping. Moreover, Figure \ref{F_1} shows some series embarking on a different growth trajectory relative to their counterfactuals only around the Eurozone creation. 
 
-Table \ref{TA_Gap} presents the exact doppelganger gaps measured in euro per capita. Ireland benefited the most from the euro adoption. Its GDP per capita was 10,781 euro higher due to the common currency adoption. However, France, Germany, Italy, and Portugal would be better off by not participating in this currency union. Yet, Germany and Italy lost the most: \texteuro5,788 and \texteuro6,089 per capita respectively.
+Table \ref{TA_Gap} presents the exact doppelganger gaps measured in euro per capita. According to our estimates, Ireland benefited the most from the euro adoption. Its GDP per capita was \texteuro10,961 higher due to the common currency adoption. However, France, Germany, Italy, and Portugal would be better off by not participating in this currency union. Yet, Germany and Italy lost the most: \texteuro4,864 and \texteuro7,351 per capita respectively.
 
 \begin{table}[h!]
 \scriptsize
@@ -218,15 +216,19 @@ Table \ref{TA_Gap} presents the exact doppelganger gaps measured in euro per cap
 \annote{This table presents the doppelganger output gap per capita in 2007. This measure is obtained by adjusting the real GDP gap for the population size and converting 2011 US dollars into 2011 euro. We use the conversion rate available from the PWT 9.1 for this year ($\approx 0.73$).}
 \end{table}
 
+Table \ref{TA_comp} shows that doppelgangers are very similar to the actual countries when comparing their predictors means despite using the same specification for all countries.\footnote{Matching only the key variable might suffice but having further similarities in related variables is also important and ensures the robustness of the findings \cite{Botosaru2019}.} Furthermore, in Appendix \ref{SS_Components}, we show that the doppelgangers are successful in recovering the time path of all GDP components for most of the analyzed countries.
+
+Table \ref{TA_weights} displays the donor country weights that constitute each doppelganger. For instance, the synthetic Ireland is composed by all countries in the donor pool, and yet it is significantly constructed by using data from the Norway (51\%), Chile (29\%), Israel (15\%), and Korea (4\%). We are overall confident about the plausibility and credibility of the methodology weighting scheme.\footnote{Potential concerns regarding the use of countries that belong to the Exchange Rate Mechanism (Denmark, Sweden, and the United Kingdom) are addressed in Section \ref{SS_donor}.}
+
 \subsection{Causality \label{SS_Causality}}
 
-A key assumption to study the impact of a policy intervention is that there is no reverse causality. In our context, this means that countries must not have adopted the euro due to economic considerations. This assumption is plausible because the Eurozone accession was driven mainly by political rather than economic factors \citep{Feldstein1997, Dyson1999, Willett2000, Spolaore2013}.\footnote{This argument holds even for the Greek case which had decided to join the euro before the single currency was a reality. According to the 1998 convergence report from the European Commission, Greece did not join the single currency in 1999 because it had not fulfilled any of the four convergence criteria. Notwithstanding, the decision to join was already made.} The adoption of the Euro was seen more as a political project aimed at deepening European integration; reducing the risks of conflict; and creating a stronger Europe on the global affair \citep{Eichengreen1993, James2012}. 
+A key assumption to study the impact of a policy intervention is that there is no reverse causality. In our context, this means that countries must not have adopted the euro due to economic considerations. This assumption is plausible because the Eurozone accession was driven mainly by political rather than economic factors \citep{Feldstein1997, Dyson1999, Willett2000, Spolaore2013}.\footnote{This argument holds even for the Greek case which had decided to join the euro before the single currency was a reality. According to the 1998 convergence report from the European Commission, Greece did not join the single currency in 1999 because it had not fulfilled any of the four convergence criteria. Notwithstanding, the decision to join was already made.} The adoption of the euro was seen more as a political project aimed at deepening European integration; reducing the risks of conflict; and creating a stronger Europe on the global affairs \citep{Eichengreen1993, James2012}. 
 
-\cite{Feldstein1997} found that the economic impact of joining the EMU would be uncertain, with the possibility of some small gains in trade and investment, accompanied by larger unemployment and inflation. \cite{Fernandez2013} studies the mechanisms through which the adoption of the Euro delayed, rather than advanced, economic reforms in some Eurozone countries.
+The case for economic considerations driving the euro adoption is more unclear. \cite{Feldstein1997} found that the economic impact of joining the EMU would be uncertain, with the possibility of some small gains in trade and investment, accompanied by larger unemployment and inflation. \cite{Fernandez2013} studies the mechanisms through which the adoption of the euro delayed, rather than advanced, economic reforms in some Eurozone countries.
 
-Moreover, the Euro area is not considered an optimal currency area (OCA), which casts doubt on the strength of the economic motivations behind its adoption. According to \citep{Mundell1961}, OCA have labor mobility, capital mobility, a risk-sharing system such as a fiscal transfer mechanism, and similar business cycles among the member countries. Labor mobility was limited by language and cultural barriers, and there was significant divergence in economic conditions and fiscal policies among the member states. Importantly, by not satisfying the requirements of an Optimum Currency Area, many economists believed that some countries adopting the euro would face economic losses \citep{Jonung2009}.
+Moreover, the euro area is not considered an optimal currency area (OCA), which casts doubt on the strength of the economic motivations behind its adoption. According to \citep{Mundell1961}, OCA have labor mobility, capital mobility, a risk-sharing system such as a fiscal transfer mechanism, and similar business cycles among the member countries. Labor mobility was limited by language and cultural barriers, and there was significant divergence in economic conditions and fiscal policies among the member states. Importantly, by not satisfying the requirements of an Optimum Currency Area, many economists believed that some countries adopting the euro would face economic losses \citep{Jonung2009}.
 
-Even though there are expected gains in terms of real economic growth from adopting a fixed exchange regime, that is not expected for all countries alike; \cite{Arvai2023} provide evidence that countries with less credible monetary policy are the ones growing after pegging their currency to a more credible anchor.  
+Even though there are expected gains in terms of real economic growth from adopting a fixed exchange regime, that is not expected for all countries alike -- \cite{Arvai2023} provide evidence that countries with less credible monetary policy are the ones growing disproportionately more after pegging their currency to a more credible anchor.  
 
 Sections \ref{SS_Implementation} and \ref{SS_Data} discussed the conditions under which the SCM provides suitable estimates of causal effects and this section addresses some of these requirements. To further back the notion that the doppelganger gap is indeed caused by the euro adoption, Sections \ref{SS_timeplacebo} and \ref{SS_spaceplacebo} provide two key placebo experiments. We can be confident that the synthetic control estimator captures the causal effect of an intervention as long as similar magnitudes are not estimated in cases where the intervention did not take place \citep{Born2018}. Finally, Section \ref{SS_stat} discusses the statistical significance of the results. 
 
@@ -239,9 +241,9 @@ Sections \ref{SS_Implementation} and \ref{SS_Data} discussed the conditions unde
 
 On 7 February 1992, representatives from twelve countries signed the Maastricht Treaty  – Belgium, Denmark, France, Germany, Greece, Ireland, Italy, Luxembourg, Netherlands, Portugal, Spain, and the United Kingdom. Upon signing it, it was common knowledge that a monetary union, with a central banking system and a common currency, was to be created within the next years. It is, therefore, reasonable to think that countries experienced, at least partly, the Eurozone accession's impact before the euro was launched. 
 
-To check for anticipation effects of the euro adoption, we perform in-time placebo tests by inspecting different intervention periods in our analysis. The date the Maastricht Treaty was signed is taken as the placebo treatment period. Figure \ref{F_Maastricht} suggests that the main conclusions from Figure \ref{F_1} remain unchanged.
+To check for anticipation effects of the euro adoption, we perform in-time placebo tests by inspecting different intervention periods in our analysis. The date the Maastricht Treaty was signed is taken as the placebo treatment period. Figure \ref{F_Maastricht} suggests that the qualitative conclusions from Figure \ref{F_1} remain unchanged.
 
-We ran further time-placebo tests in which the placebo treatment date is set artificially to be every year from 1992 until 1998. For the sake of brevity, besides the Maastricht Treaty date 1992, we only report the tests for 1995 and 1998 in Figures \ref{F_1995} and \ref{F_1998}. Reassuringly, the results remain unaltered.\footnote{The remaining figures can be provided by the authors upon request.}
+We ran further time-placebo tests in which the placebo treatment date is set artificially to be every year from 1992 until 1998. For the sake of brevity, besides the Maastricht Treaty date 1992, we only report the tests for 1995 in Figure \ref{F_1995}. Reassuringly, the results remain unaltered.
 
 \begin{figure}[h!]
     \centering
@@ -252,12 +254,16 @@ We ran further time-placebo tests in which the placebo treatment date is set art
     \label{F_Maastricht}
 \end{figure}
 
-Figure \ref{F_Maastricht} presents limited evidence in favor of the existence of anticipation effects. If anything, the gap between the actual and the synthetic series becomes wider than the one analyzed in Figure \ref{F_1}. Notwithstanding, the direction of the effect remains unchanged. Thus, ignoring possible anticipation effects in our baseline estimates may lead to a lower bound of the euro impact for countries like Austria, Belgium, France, and Italy.\footnote{The case for Greece is not worrisome given its bad pre-treatment fit and, therefore, its lack of significance.}
+Figure \ref{F_Maastricht} presents limited evidence in favor of the existence of anticipation effects. If anything, the gap between the actual and the synthetic series becomes wider than the one analyzed in Figure \ref{F_1}. Notwithstanding, the direction of the effect remains unchanged. Thus, ignoring possible anticipation effects in our baseline estimates may lead to a lower bound of the euro impact for countries like Austria, Belgium, France, and Italy.\footnote{The case for Greece is not worrisome given its bad pre-treatment fit and, therefore, its lack of significance.} 
 
-The absence of anticipation effects for the remaining countries may be due to two things. First, the key event representing a change for most European citizens was the irrevocable exchange rate fix on 31st December 1998 and the euro launch on the 1st of January 1999. Second, most of these countries had already experienced trade and economic gains from joining the European Union \citep{Campos2018}. Therefore, such effects lie in our pre-treatment sample and thus, are already being considered.\footnote{Add the fact that Italy dropped the exchange rate agreement and floated for a year 93-94. Add that Austria and Finland joined the EU in 1995. Add that most of the divide might come from austerity measures implemented in Austria, Belgium, Finland, France, Germany, Italy \citep{Alesina2019}. \cite{Gabriel2023} show how recessionary were these spending based austerity shocks implemented, also following the Maastricht Treaty.}
-%Still, these figures should be analysed carefully. For example, the plot for Greece shows some effect that starts even before the placebo treatment of 1992. This anticipated effect seems to be driven by the Greek European Union (EU) accession in 1981 and not from the Euro. 
-%Furthermore, estimates for Austria and Finland must be interpreted carefully as these countries entered the EU exactly in 1995 and the placebo treatment effect may be biased. 
+Moreover, some countries experienced important events between the Maastricht Treaty and the Euro Accession which likely affected economic growth. First, Italy dropped from the exchange rate agreement to a floating regime in 1993. Second, Austria and Finland joined the EU only later in 1995, thus the in-time placebo might be picking up effects from the EU accession. Third, several countries adopted spending-based consolidation measures in the period following the Maastricht Treaty, which might have caused contractionary effects \citep{Gabriel2023} and the ``premature" widening of the gap.
 
+%\footnote{Austria, Belgium, Finland, France, Germany, and Italy adopted spending-based austerity \citep{Alesina2019}.}
+
+
+%TO BE ADDED: Add the fact that Italy dropped the exchange rate agreement and floated for a year 93-94. Add that Austria and Finland joined the EU in 1995. Add that most of the divide might come from austerity measures implemented in Austria, Belgium, Finland, France, Germany, Italy \citep{Alesina2019}. \cite{Gabriel2023} show how recessionary were these spending based austerity shocks implemented, also following the Maastricht Treaty.
+
+The absence of anticipation effects for the remaining countries may be due to two things. First, the key event representing a change for most European citizens was the irrevocable exchange rate fix on 31st December 1998 and the euro launch on the 1st of January 1999. Second, most of these countries had already experienced trade and economic gains from joining the European Union \citep{Campos2018}. Therefore, such effects lie in our pre-treatment sample and thus, are already being considered.
 
 \subsubsection{In-Space Placebo Test \label{SS_spaceplacebo}}
 
@@ -285,11 +291,9 @@ Next, we compare the post and pre-treatment behavior of these series and inspect
 		\annote{\footnotesize The plotted lines represent the prediction error for the treated country (black) and donor countries (grey) for which we impose a fictitious euro accession. We do not plot the donor countries whose pre-treatment MSPE was four times larger than the one of the treated country.}
 \end{figure}
 
-The plots from Figure \ref{F_Placebo} depict the doppelganger gaps for treated countries (black lines) and donor countries (grey lines), that is, the differences between each countries' normalized GDP and their doppelgangers' estimates. The smaller the gap for the pre-treatment period, the better the fit of the synthetic series to the outcome variable. Countries with a bad pre-intervention fit are excluded from the in-space placebo test because they are not suited to inform about the post-treatment effect.\footnote{We define a good pre-intervention fit following \cite{Firpo2018} when the pre-intervention MSPE of a donor country is at most four times greater than the Eurozone country’s pre-intervention MSPE being analyzed.} 
+The plots from Figure \ref{F_Placebo} depict the doppelganger gaps for treated countries (black lines) and donor countries (grey lines), that is, the differences between each country's normalized GDP and their doppelgangers' estimates. The smaller the gap for the pre-treatment period, the better the fit of the synthetic series to the outcome variable. Donor countries with a bad pre-intervention fit are excluded from the in-space placebo test because they are not suited to inform about the post-treatment effect.\footnote{We define a good pre-intervention fit following \cite{Firpo2018} when the pre-intervention MSPE of a donor country is at most four times greater than the Eurozone country’s pre-intervention MSPE being analyzed.}  In the Appendix, Table \ref{TA_RMSPE_PRE} presents the associated pre-treatment RMSPEs that speak to the good quality of the pre-treatment fit for the treated units, with values ranging between 0.03 and 0.09, closely in line with the donor pool pre-treatment RMSPEs. Notwithstanding, given the heterogeneity of the RMSPEs, we will take that into account when discussing inference in Section \ref{SS_stat}.
 
-Visually, Figure \ref{F_Placebo} reinforces the findings in Figure \ref{F_1}. When comparing the full black lines from each Euro-adopter country to the grey lines of fictitious treated units, it is clear that,  for some countries, the post-treatment gap is unusually bigger. Specifically, it suggests a positive impact of the euro accession on Ireland and Luxembourg and a negative impact, if any, on France, Germany, Italy, and Portugal.
-
-%Following \cite{Firpo2018}, I might add graphs with confidence intervals built based on this placebo test for all 12 countries.  \textbf{Figure here!}\\
+Visually, Figure \ref{F_Placebo} reinforces the findings in Figure \ref{F_1}. When comparing the full black lines from each Eurozone country to the grey lines of fictitious treated units, it is clear that,  for some countries, the post-treatment gap is unusually big. Specifically, it suggests a positive impact of the euro accession on Ireland and Luxembourg and a negative impact, if any, on France, Germany, Italy, and Portugal.
 
 \subsubsection{Statistical Significance \label{SS_stat}}
 
@@ -305,7 +309,7 @@ Given our estimates of all fictional treatment effects in the previous section, 
 
 where $x_{1,t}$ denotes the GDP of the treated country at period t; $\vec{x_{0,t}}$ denotes a vector of observations of GDP for the donor countries in period t; $\vec{w}$ denotes a vector of weights for the donor countries, $T$ denotes the total number of periods, and $T_0$ denotes the treatment date. 
 
-This statistic already allows a quantitative analysis of the treatment effect taking into account the quality of the match produced by the SCM. A small pre-treatment RMSPE implies a good fit of the synthetic series to the actual series and a large post-treatment RMSPE suggests, for the treated units, a large intervention impact. Therefore, obtaining a larger ratio for the treated unit than for the placebo-treated units would entail a significant treatment effect.\footnote{A large post-intervention RMSPE per se is not indicative of a large effect of the intervention. It depends on whether the synthetic control can reproduce closely the outcome of interest prior to the intervention \cite{Abadie2019}.}
+This statistic already allows a quantitative analysis of the treatment effect taking into account the quality of the match produced by the SCM. A small pre-treatment RMSPE implies a good fit of the synthetic series to the actual series and a large post-treatment RMSPE suggests, for the treated units, a large intervention impact. Therefore, obtaining a larger ratio for the treated unit than for the placebo-treated units would entail a significant treatment effect. A large post-intervention RMSPE \textit{per se} is thus not indicative of a large effect of the intervention. It depends on whether the synthetic control can reproduce closely the outcome of interest prior to the intervention \citep{Abadie2019}.
 
 Table \ref{TA_RMSPE} depicts this relative measure for the Eurozone countries (``Treated" column) and its donors. Ireland stands out as the country with the highest RMSPE ratio with a post-intervention gap about 15 times larger than its pre-intervention gap, followed by Italy, Portugal, Germany, and France. 
 
@@ -316,29 +320,29 @@ Table \ref{TA_RMSPE} depicts this relative measure for the Eurozone countries (`
 %     \annote{The plots show the ratio between the post- and the pre-intervention RMSPE for the treated units (in black diamonds) and all donor countries (in grey circles).}
 % \end{figure}
 
-\begin{table}[htbp]
+\begin{table}[htbp!]
 \scriptsize
 \caption{\label{TA_RMSPE} Relative RMSPE of the Pre- and Post-Treatment Doppelganger gaps.}\centering\medskip
 \begin{tabular}{c|cccccccccccccc|c||c} \toprule
                       & \textit{\textbf{AUS}} & \textit{\textbf{CAN}} & \textit{\textbf{CHL}} & \textit{\textbf{DNK}} & \textit{\textbf{ISL}} & \textit{\textbf{ISR}}  & \textit{\textbf{KOR}} & \textit{\textbf{MEX}} & \textit{\textbf{NZL}} & \textit{\textbf{NOR}} & \textit{\textbf{SWE}} & \textit{\textbf{CHE}} & \textit{\textbf{GBR}} & \textit{\textbf{USA}} & \textit{\textbf{Treated}} & \textit{\textbf{P-Value ($\rho$)}} \\ \midrule
-\textit{\textbf{AUT}} & 2.98 & 5.00 & 2.85 & 4.50 & 1.73 & 1.25 & 2.93 & 4.35 & 3.10 & 7.64 & 4.41 & 3.24 & 1.16 & 3.97 & 3.20  & 0.533  \\
-\textit{\textbf{BEL}} & 2.86 & 4.57 & 2.85 & 5.97 & 3.01 & 1.79 & 2.93 & 4.35 & 3.28 & 5.66 & 4.41 & 3.24 & 1.51 & 5.19 & 3.40  & 0.467 \\
-\textit{\textbf{FIN}} & 2.61 & 5.28 & 2.85 & 4.42 & 2.89 & 1.25 & 2.93 & 4.35 & 3.30 & 7.65 & 3.64 & 3.24 & 1.33 & 3.88 & 1.78  & 0.867 \\
-\textit{\textbf{FRA}} & 2.99 & 2.49 & 2.85 & 4.34 & 1.61 & 1.25 & 2.93 & 4.35 & 3.14 & 7.37 & 2.47 & 3.24 & 1.54 & 4.04 & 4.97  & \textbf{0.133} \\
-\textit{\textbf{DEU}} & 2.80 & 4.74 & 2.85 & 4.98 & 2.88 & 1.25 & 2.93 & 4.35 & 3.30 & 7.65 & 4.40 & 3.24 & 1.22 & 2.86 & 5.98  & \textbf{0.133} \\
-\textit{\textbf{GRC}} & 2.81 & 3.83 & 2.59 & 4.83 & 3.49 & 2.38 & 2.74 & 5.15 & 3.63 & 5.93 & 4.66 & 3.04 & 1.33 & 5.21 & 0.48  & 1.000\\
-\textit{\textbf{IRL}} & 2.81 & 5.34 & 1.04 & 4.37 & 2.00 & 8.16 & 2.93 & 4.35 & 2.81 & 8.77 & 4.40 & 3.24 & 1.82 & 5.19 & 15.51 & \textbf{0.067} \\
-\textit{\textbf{ITA}} & 1.95 & 3.65 & 2.85 & 4.82 & 1.82 & 1.25 & 2.93 & 3.52 & 3.16 & 7.65 & 4.40 & 3.24 & 1.17 & 5.38 & 7.88  & \textbf{0.067} \\
-\textit{\textbf{LUX}} & 2.70 & 5.69 & 2.85 & 5.90 & 1.97 & 1.25 & 2.93 & 4.35 & 2.71 & 7.35 & 4.40 & 3.24 & 2.43 & 3.88 & 3.69  & 0.467  \\
-\textit{\textbf{NLD}} & 2.95 & 5.74 & 2.85 & 7.06 & 2.56 & 1.25 & 2.93 & 4.35 & 2.55 & 7.45 & 4.41 & 3.24 & 1.61 & 3.87 & 1.79  & 0.867  \\
-\textit{\textbf{PRT}} & 3.02 & 5.23 & 2.85 & 4.70 & 3.01 & 1.27 & 2.93 & 3.66 & 2.88 & 7.50 & 4.40 & 3.24 & 1.85 & 3.86 & 6.26  & \textbf{0.133} \\
-\textit{\textbf{ESP}} & 1.95 & 4.84 & 2.85 & 4.81 & 1.77 & 1.25 & 2.93 & 4.35 & 3.24 & 7.65 & 4.40 & 3.24 & 1.77 & 3.92 & 1.45  & 0.933 \\
+\textit{\textbf{AUT}} & 3.0 & 5.0 & 2.9 & 4.5 & 1.7 & 1.3 & 2.9 & 4.4 & 3.1 & 7.6 & 4.4 & 3.2 & 1.1 & 4.0 & 3.2  & 0.5  \\
+\textit{\textbf{BEL}} & 2.9 & 4.6 & 2.9 & 5.97 & 3.0 & 1.8 & 3.0 & 4.4 & 3.3 & 5.7 & 4.4 & 3.2 & 1.5 & 5.2 & 3.4  & 0.5 \\
+\textit{\textbf{FIN}} & 2.6 & 5.3 & 2.9 & 4.42 & 2.9 & 1.3 & 2.9 & 4.4 & 3.3 & 7.7 & 3.6 & 3.2 & 1.3 & 3.9 & 1.8  & 0.9 \\
+\textit{\textbf{FRA}} & 3.0 & 2.5 & 2.9 & 4.3 & 1.6 & 1.3 & 2.9 & 4.4 & 3.1 & 7.4 & 2.5 & 3.2 & 1.5 & 4.0 & 5.0  & \textbf{0.13} \\
+\textit{\textbf{DEU}} & 2.8 & 4.74 & 2.9 & 5.0 & 2.9 & 1.3 & 2.9 & 4.4 & 3.3 & 7.7 & 4.4 & 3.2 & 1.2 & 2.9 & 6.0  & \textbf{0.13} \\
+\textit{\textbf{GRC}} & 2.8 & 3.8 & 2.6 & 4.8 & 3.4 & 2.4 & 2.7 & 5.2 & 3.6 & 5.9 & 4.7 & 3.0 & 1.3 & 5.2 & 0.5  & 1.0\\
+\textit{\textbf{IRL}} & 2.8 & 5.3 & 1.0 & 4.4 & 2.0 & 8.2 & 2.9 & 4.4 & 2.8 & 8.8 & 4.4 & 3.2 & 1.8 & 5.1 & 15.5 & \textbf{0.07} \\
+\textit{\textbf{ITA}} & 2.0 & 3.7 & 2.9 & 4.8 & 1.8 & 1.3 & 2.9 & 3.6 & 3.2 & 7.7 & 4.4 & 3.2 & 1.2 & 5.4 & 7.9  & \textbf{0.07} \\
+\textit{\textbf{LUX}} & 2.7 & 5.7 & 2.9 & 5.9 & 2.0 & 1.3 &  3.0 & 4.4 & 2.8 & 7.4 & 4.4 & 3.2 & 2.4 & 3.9 & 3.7 & 0.5  \\
+\textit{\textbf{NLD}} & 3.0 & 5.7 & 2.9 & 7.7 & 2.6 & 1.3 & 3.0 & 4.4 & 2.6 & 7.5 & 4.4 & 3.2 & 1.6 & 3.9 & 1.8  & 0.9  \\
+\textit{\textbf{PRT}} & 3.0 & 5.2 & 2.9 & 4.7 & 3.0 & 1.3 & 2.9 & 3.7 & 2.9 & 7.5 & 4.4 & 3.2 & 1.9 & 3.9 & 6.3  & \textbf{0.13} \\
+\textit{\textbf{ESP}} & 2.0 & 4.8 & 2.9 & 4.8 & 1.8 & 1.3 & 2.9 & 4.4 & 3.2 & 7.7 & 4.4 & 3.2 & 1.8 & 3.9 & 1.5  & 0.9 \\
 \bottomrule
 \end{tabular} 
-\annote{The column \textit{Treated} displays the RMSPE ratio for each country, $\chi$ in equation \ref{EQ_test}. The column \textit{P-Value} displays the chances of obtaining a ratio as high as the treated country if one were to pick a country at random from the sample including also the treated country (equivalent to $\rho$ in equation \ref{EQ_test2}). Given the small number of donor countries, we consider the results sizeable if there are at most 2 countries with a higher RMSPE ratio.}
+\annote{The column \textit{Treated} displays the RMSPE ratio for each country, $\chi$ in equation \ref{EQ_test}. The column \textit{P-Value} displays the chances of obtaining a ratio as high as the treated country if one were to pick a country at random from the sample including also the treated country (equivalent to $\rho$ in equation \ref{EQ_test2}). Given the small number of donor countries, we consider the results sizeable if there is at most 1 country other than the treated country with a higher RMSPE ratio (p-value of 0.133). Table \ref{TA_RMSPE_PRE} presents the estimates for the pre-treatment RMSPEs, the denominator of the values presented here.}
 \end{table}
 
-We deem the effect of the euro adoption significant if the estimated effect for the treated units is unusually large relative to the distribution of the placebo effects - which is the case for Germany, France, Ireland, Italy, and Portugal. To test this in practice, we follow \cite{Abadie2015} and compute a p-value which compares the value of the RMSPE for the treated country to that of all other units as follows:
+We deem the effect of the euro adoption significant if the estimated effect for the treated units is unusually large relative to the distribution of the placebo effects - which is the case for Germany, France, Ireland, Italy, and Portugal. To test this in practice, we follow \cite{Abadie2015} and compute a p-value which compares the value of the RMSPE ratio for the treated country to that of all other units as follows:
 
 \begin{equation}
 \label{EQ_test2}
@@ -347,29 +351,26 @@ We deem the effect of the euro adoption significant if the estimated effect for 
 
 where $I(.)$ denotes the indicator function, $N$ the number of donor countries, $\chi_1$ the RMSPE ratio for the treated unit and $\chi_i$ is the RMSPE ratio for country \textit{i} which can be a donor or the treated country. 
 
-If one were to pick a country at random for the Irish case, the chances of obtaining a ratio as high as the Irish one would be 1 out of 15. The exact same interpretation holds for Italy. For Germany, France, and Portugal the chances of obtaining a ratio as high as their own would be 2 out of 15, the own country and Norway, which is also a sizeable effect.
+If one were to pick a country at random for the Irish case, the chances of obtaining a ratio as high as the Irish one would be 1 out of 15. The exact same interpretation holds for Italy. For Germany, France, and Portugal the chances of obtaining a ratio as high as their own would be 2 out of 15, the own country and Norway, which is deemed a sizeable effect.
 
-\subsection{Further Robustness Checks} 
+%\subsection{Further Robustness Checks} 
 
-\subsubsection{Changes to Donor Pool \label{SS_donor}}
+\subsection{Changes to Donor Pool \label{SS_donor}}
 
 This section addresses two concerns. First, some countries in the control group may have opted out of the treatment. This would suggest a reverse causality problem and raise doubts about the credibility of the results presented. As discussed at the beginning of Section \ref{SS_Causality}, countries used in the analysis must not have opted in or out due to economic considerations. 
 
-In fact, the UK, Sweden, and Denmark belonged to the European Union at the time but did not adopt the common currency. Even though they did opt out due to political reasons, we still address this issue by excluding these countries altogether from the donor pool.\footnote{Removing all European countries, or middle-income OECD countries like Mexico and Chile instead do not qualitatively change the robustness of the exercise.} We redo our analysis with this new pool and the results are presented in Figure \ref{F_donor}. The main conclusions remain unchanged, in particular, for the ones whose doppelgangers' construction highly relied on this trio - Austria, Belgium, France, Germany, Italy, and Portugal.
-%with Ireland exhibiting a large economic gain from the euro accession.
-
-%\footnote{According to Table 2 in \cite{Campos2018}, Sweden was not even significantly affected by joining the EU in 1995 and thus, it is not problematic to use this country in our analysis.}
+In fact, the UK, Sweden, and Denmark belonged to the European Union at the time but did not adopt the common currency. Even though they did opt out due to political reasons, we still address this issue by excluding these countries altogether from the donor pool.\footnote{Removing all European countries, or middle-income OECD countries like Mexico and Chile instead do not qualitatively change the robustness of the exercise.} We redo our analysis with this new pool and the results are presented in Figure \ref{F_donor}. The main conclusions remain unchanged, in particular, for the ones whose doppelgangers' construction highly relied on this trio.
 
 \begin{figure}[h!]
     \centering
-    \caption{Impact of the Euro Accession with a Change in the Donor Pool \label{F_donor}}
+    \caption{Impact of the euro Accession with a Change in the Donor Pool \label{F_donor}}
     \includegraphics[scale=1.2]{Output/Figures/SCM_gdp_Rob_1999_Annual_DNK_SWE_GBR.pdf}
     \annote{In each graph, the blue dashed line represents the normalized real GDP for the synthetic country and the black full line represents the series for the actual country. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger prior to the euro accession. The vertical line depicts the treatment period - 2001 for Greece and 1999 for the remaining countries. For all countries the analysis starts in 1970 and ends in 2007. Relative to the baseline analysis, the donor pool now excludes Denmark, Sweden and the United Kingdom. Table \ref{TA_weights_placebo} show the weights used to construct these results.}
 \end{figure}
 
 Second, there might have been spillover effects of the treatment on the donor countries. We address this issue by iteratively re-estimating our baseline estimate for each Eurozone country excluding in each iteration one of the countries with positive weight \citep{Abadie2015}. Moreover, this robustness check also tests the hypothesis that a single country in the donor pool biased the results. If the exclusion of a single unit from the donor pool has a large effect on results--without a discernible change in pre-intervention fit--the estimated results might be caused by other interventions or by particularly idiosyncratic shocks on the outcome of the excluded untreated unit.
 
-We display this robustness check for countries that weighted, at least, 10\% in the construction of, at least, 2 countries' counterfactuals in Appendix \ref{SS_donor_appendix}. This exercise shows that no particular donor country is driving the main conclusions. So, it is unlikely that there were spillover effects of the treatment on the donors or that one specific country in the donor pool is driving the results.\footnote{The robustness of SCM comes exactly from having similar results using different donors, even if the estimated weights change.}
+We display this robustness check for countries that weighted, at least, 10\% in the construction of, at least, 2 countries' counterfactuals in Appendix \ref{SS_donor_appendix}. This exercise shows that no particular donor country is driving the main conclusions. So, it is unlikely that there were spillover effects of the treatment on the donors or that one specific country in the donor pool is driving the results. The robustness of SCM comes exactly from having similar results using different donors, even if the estimated weights change.
 %\footnote{For the sake of brevity, the figures for all the remaining countries are not reported, but they can be provided by the authors upon request. The results remain qualitatively unchanged.} So, it is unlikely that spillover effects nor one specific country in the donor pool are driving the results.
 
 % \subsubsection{Changes in the Sample Period \label{SS_start}}
@@ -380,7 +381,7 @@ We display this robustness check for countries that weighted, at least, 10\% in 
 
 % \begin{figure}[h!]
 % 	\centering
-% 	\caption{The Impact of the Euro Accession with a Change in the Sample Period}	
+% 	\caption{The Impact of the euro Accession with a Change in the Sample Period}	
 % 	\label{F_Start}
 %     \subfigure{\includegraphics[width=7cm]{Ireland_1973.eps}}
 %     \subfigure{\includegraphics[width=7cm]{Greece_1981.eps}}
@@ -406,7 +407,7 @@ It is important to highlight that comparing the actual and the synthetic series 
 
 %\subsection{What explains the cumulative doppelganger gap?}
 
-Next, we compute the contribution of each GDP component for the output gap generated by the treatment. In section \ref{SS_Method}, Equation \ref{EQ_objective} defines the doppelganger gap as the difference in the outcome variable (here, real GDP) between the treated and the synthetic country. The cumulative treatment effect can be estimated by computing the doppelganger gap for $t=2007$, the last year of our analysis.
+Next, we compute the contribution of each GDP component for the output gap generated by the treatment. In section \ref{SS_Method}, Equation \ref{EQ_objective} defines the doppelganger gap as the difference in real GDP between the treated and the synthetic country. The cumulative treatment effect can be estimated by computing the doppelganger gap for $t=2007$, the last year of our analysis.
 %In this section, we compute doppelganger gaps for the GDP $ = GDP_{t,c}-GDP_{t,c}^{dop} = x_{1,t} - \vec{x_{0,t}} \vec{w} $.     
 
 Here, we proceed in four steps. Analogously to Equation \ref{EQ_objective}, we start by computing doppelganger gaps for each GDP component. Then, we compute the relative weight of each component $z$ on the output doppelganger gap in the following way:
@@ -436,27 +437,29 @@ Figure \ref{F_Decomposition} depicts, for each country, the percent GDP gap in 2
     \label{F_Decomposition}
 \end{figure}
 
-\textbf{Countries that implemented spending-based austerity measures between 1992 and 1998} Austria, Belgium, Germany, Spain, Finland, France, Italy with potentially recessionary effects being captured in the in time placebo exercise according to evidence provided by \cite{Gabriel2023}.
+%\textbf{Countries that implemented spending-based austerity measures between 1992 and 1998} Austria, Belgium, Germany, Spain, Finland, France, Italy with potentially recessionary effects being captured in the in time placebo exercise according to evidence provided by \cite{Gabriel2023}.
 
-\textbf{Countries that did not implement spending-based austerity measures between 1999 and 2007} Austria, Belgium, Spain, Finland, France,
+%\textbf{Countries that did not implement spending-based austerity measures between 1999 and 2007} Austria, Belgium, Spain, Finland, France,
 
-Italy and Portugal did implement strong austerity measures between 2004 and 2006 accounting for more than 3\% of GDP in total for each country \cite{Alesina2019}.
+%Italy and Portugal did implement strong austerity measures between 2004 and 2006 accounting for more than 3\% of GDP in total for each country \cite{Alesina2019}.
 
-We now take a deeper look into the countries which were significantly affected as argued in Section \ref{SS_Causality}. For Ireland, joining the Eurozone boosted GDP by 39\%. Even though all GDP components contribute positively to this result, the private consumption and investment together can explain almost 80\% of the total output gain from the treatment.
+We now take a deeper look into the countries which were significantly affected as argued in Section \ref{SS_Causality}. For Ireland, joining the Eurozone boosted GDP by 40\%. Even though all GDP components contribute positively to this result, private consumption and investment together explain more than 80\% of the total output gain from the treatment.
 
-Table \ref{T_Decomposition} also shows that the reasons behind the economic slowdown experienced by some countries at the euro accession differ from country to country. We find that for France and Portugal, the private consumption and the net exports accounted for a large share of the GDP gap. For Germany and Italy, it is the doppelganger difference in private consumption alongside investment that better explains the negative economic impact of the euro on GDP.
+Figure \ref{F_Decomposition} also shows that the reasons behind the economic slowdown experienced by some countries at the euro accession differ from country to country. We find that for France and Portugal, the private consumption and the net exports accounted for a large share of the GDP gap. For Germany and Italy, it is the private consumption alongside investment that better explains the negative economic impact of the euro adoption.
 
-For most countries, government consumption is one of the components with a positive contribution. On the one hand, this is a puzzling finding given the Eurozone countries were operating under the fiscal rules of the Stability and Growth Pact (SGP) during the post-treatment period.\footnote{Nevertheless, according to \cite{Bofinger2003}, the correlation between the average real growth rate of government consumption and fiscal deficits between 1999 and 2002 was negative, meaning that the low deficit rules did not necessarily imply less government spending.} 
+For most countries, government consumption contributed positively to growth. This might seem a puzzling finding given that Eurozone countries were operating under the fiscal rules of the Stability and Growth Pact (SGP) during the post-treatment period.\footnote{Nevertheless, according to \cite{Bofinger2003}, the correlation between the average real growth rate of government consumption and fiscal deficits between 1999 and 2002 was negative, meaning that the low deficit rules did not necessarily imply less government spending.} However, before the euro accession, there were stringent Maastricht convergence criteria which might have restricted government consumption before the euro launch, possibly increasing fiscal space until 1999.
 
-On the other hand, before the Euro accession, there were stringent Maastricht convergence criteria which might have restricted government consumption, creating then more fiscal space after 1999. There seems to be indeed a strong negative relationship between the fiscal spending before and after the Euro adoption. Most countries in the sample, like Finland and Spain, implemented spending-based austerity measures after the Maastricht Treaty in line with the Stability and Growth Pact (SGP) \citep{Alesina2019}.\footnote{Countries that implemented spending-based austerity measures between 1992 and 1998 were Austria, Belgium, Germany, Spain, Finland, France, and Italy. Countries that did not implement spending-based austerity measures between 1999 and 2007 were Austria, Belgium, Spain, Finland, and France.} This has likely created fiscal space which together with access to cheaper credit promoted an increase in government consumption beyond what would have happened absent the Euro adoption. Other countries, such as Portugal, that did not consolidate spending before the Euro accession, also did not boost government consumption afterwards. 
+Most countries in the sample implemented spending-based austerity measures after the Maastricht Treaty \citep{Alesina2019}.\footnote{Countries that implemented spending-based austerity measures between 1992 and 1998 were Austria, Belgium, Germany, Spain, Finland, France, and Italy.} This has likely created fiscal space which together with access to cheaper credit promoted an increase in government consumption beyond what would have happened absent the euro adoption. The exceptions that see a reduction in government consumption following the euro adoption are Portugal and Italy, countries that adopted spending-based consolidation measures worth more than 3\% of GDP between 2005 and 2007 \citep{Alesina2019}.
+
+% Countries that did not implement spending-based austerity measures between 1999 and 2007 were Austria, Belgium, Spain, Finland, and France.
 
 Before the Euro, the need to exchange local currencies implied extra transaction costs and exchange rate risk. The single currency was expected to boost cross-border trade and investment between the member states since doing business in the Eurozone would be more cost-efficient and less risky \cite{DeGrauwe2020}. For third parties, the Eurozone would be an attractive place to invest as well. Consumers would benefit from price transparency and stability. Therefore, it would be expected an increase in investment, exports, and imports but it is not clear in which direction the trade balance would go.
 
-Table \ref{T_Decomposition_NX} indeed reveals that, except for France and Italy, all countries had a higher trade volume than if they had not adopted the common currency. This result is in accordance with \cite{Baldwin2008} and \cite{Schmitz2011} who argue that the euro has significantly promoted trade in the Eurozone countries. Yet, net exports changed differently across countries. Only Germany and Ireland experienced significant net trade benefits from the euro accession. We corroborate the negative impact on net exports in most cases as documented in \cite{Hope2016}. 
+Table \ref{T_Decomposition_NX} reveals that most countries had a higher trade volume than if they had not adopted the common currency, in line with findings by \cite{Baldwin2008} and \cite{Schmitz2011}. Yet, our estimates show that only a few countries experienced net trade benefits, aligning with the findings of  \cite{Hope2016}
 
-Moreover, even though the common currency was expected to attract foreign investment for the whole Eurozone, Ireland stands out from the remaining member countries. Investment in Ireland increased significantly because of the euro adoption. Therefore, country-specific characteristics have significantly shaped the impact across member states.   
+Moreover, even though the common currency was expected to attract foreign investment for the whole Eurozone, Ireland stands out from the remaining member countries. Investment in Ireland increased significantly because of the euro adoption. Therefore, country-specific characteristics have significantly shaped the impact across member states.
 
-% \subsection{What happened after the Maastricht Treaty might help us understand some of the dynamics we see after the Euro adoption.}
+% \subsection{What happened after the Maastricht Treaty might help us understand some of the dynamics we see after the euro adoption.}
 
 % \begin{figure}[h!]
 %     \centering
@@ -468,43 +471,28 @@ Moreover, even though the common currency was expected to attract foreign invest
 
 \section{Did Euro Area Nationals Gain with the Euro Adoption? \label{S_GNI}}
 
-GDP and Gross National Income (GNI) are both important measures to gauge the economic performance of a country. GDP measures the total value of all goods and services produced in a country, focusing on the output generated by the factors of production within the country, regardless of the nationality of the owners. It thus includes the output of foreign-owned firms operating within the country's borders but excludes the output of domestic-owned firms operating abroad. GNI, on the other hand, measures the total income earned by a country's residents, regardless of where they are located geographically. It includes GDP plus any income earned from abroad by residents of the country, excluding income earned domestically by foreign residents. 
+GDP and GNI are both important measures to gauge the economic performance of a country. GDP measures the total value of all goods and services produced in a country, focusing on the output generated by the factors of production within the country, regardless of the nationality of the owners. GNI, on the other hand, measures the total income earned by a country's residents, regardless of where they are located geographically. It includes GDP plus any income earned from abroad by residents of the country, excluding income earned domestically by foreign residents. 
 
-Given the important role of profits and income earned by foreign companies operating domestically for some Euro adopters (e.g., Ireland), we extend the analysis to use GNI as an outcome variable. Figure \ref{F_GNI} shows the results.\footnote{Due to data limitations, Greece and some donor countries are excluded from this exercise.} Ireland's economic gains from the Euro adoption are still positive when measured by GNI, meaning that total income earned by residents increased amid the Euro adoption. However, the gains are considerably smaller than when using GDP. For other countries, results remained broadly unchanged albeit with poor pre-treatment fit. 
+Given that for some euro adopters like Ireland profits and income earned by foreign companies operating domestically play an important role, we extend the analysis to using GNI as an outcome variable. Due to data limitations, Greece and some donor countries are excluded from this exercise, namely Switzerland and Iceland. Luxembourg's doppelganger cannot be estimated as it is the country with the highest GNI per capita. 
 
-Ireland has become an attractive destination for high-growth companies and global corporations due to its favorable corporate tax environment, skilled workforce, and membership in the European Union.\footnote{Following the Government's announcement in July 1998 to introduce a standard rate of corporation tax of 12.5\% for trading income with effect from 1st January 2003, the Government has commenced the process of reducing the existing standard rate of corporation tax. Ireland's corporate tax rate of 12.5\% is among the lowest in Europe, which has been a significant factor in attracting multinational companies.}
-While the activities of these multinational corporations contribute significantly to Ireland's GDP through production and services rendered within the country, a large portion of the profits are repatriated to foreign investors or parent companies. This implies that although these profits count towards Ireland's GDP, they do not contribute to Ireland's GNI.
-
-
+Figure \ref{F_GNI} shows the results. Ireland's economic gains from the euro adoption are still positive when measured by GNI, thus total income earned by residents increased amid the euro adoption. However, these gains are considerably smaller than when using GDP. To be precise, Ireland's estimated gap drops by approximately two-thirds (Table \ref{TA_Gap_GNI}). For other countries with statistically significant results, results remained broadly unchanged albeit with a poorer pre-treatment fit given not only the lower number of donor countries used in this analysis but also the targeted measure. France has a relatively stronger result for GNI, while the effect on Italy is mildly attenuated.
 
 \begin{figure}[h!]
     \centering
     \caption{The Impact of the Eurozone Accession - Gross National Income per capita}
     \includegraphics[width=\textwidth]{Output/Figures/SCM_gni_Annual.pdf}
-    \annote{In each graph, the dashed line represents the inflation rate for the synthetic country and the continuous line represents the series for the actual country. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger before the euro accession. The vertical line represents the treatment period - 1999 for all countries except for Greece which is 2001. For each country, the analysis starts in 1970 and ends in 2007.}
+    \annote{In each graph, the dashed line represents GNI per capita for the synthetic country and the continuous line represents the series for the actual country. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger before the euro accession. The vertical line represents the treatment period - 1999 for all countries except for Greece which is 2001. For each country, the analysis starts in 1970 and ends in 2007.}
     \label{F_GNI}
 \end{figure}
 
-\begin{table}[h!]
-\scriptsize
-\caption{\label{TA_Gap_GNI} Doppelganger GNI Gap}\centering
-\begin{tabular}{lcccccccccccc} 
-\toprule
- & \textbf{AUT}  & \textbf{BEL}  & \textbf{FIN}  & \textbf{FRA}  & \textbf{DEU}  & \textbf{GRC}  & \textbf{IRL}  & \textbf{ITA}  & \textbf{LUX}  & \textbf{NLD}  & \textbf{PRT}  & \textbf{ESP} \\
- \midrule  
-\textbf{GNI Gap} & \multirow{2}{*}{-6,793} & \multirow{2}{*}{-1,970} & \multirow{2}{*}{2,096} & \multirow{2}{*}{-5,885} & \multirow{2}{*}{-6,912} & \multirow{2}{*}{--} & \multirow{2}{*}{4,235} & \multirow{2}{*}{-7,048} & \multirow{2}{*}{--} & \multirow{2}{*}{-2,602} & \multirow{2}{*}{-5,028} & \multirow{2}{*}{-346} \\
-(\texteuro \ per capita) &  &  &  &  &  & &  & &  & &  &  \\
-\bottomrule
-\end{tabular}
-\annote{This table presents the doppelganger gni gap per capita in 2007. This measure is obtained by adjusting the real GNI gap which is currently in 2015 USD. We use the conversion rate available from the PWT 9.1 for this year ($\approx 0.73$).}
-\end{table}
+Ireland has become an attractive destination for high-growth companies and global corporations due to its favorable corporate tax environment, skilled workforce, the membership in the European Union, and, most importantly, in the Eurozone.\footnote{Following the Government's announcement in July 1998 to introduce a standard rate of corporation tax of 12.5\% for trading income with effect from 1st January 2003, the Government has commenced the process of reducing the existing standard rate of corporation tax. Ireland's corporate tax rate of 12.5\% is among the lowest in Europe, which has been a significant factor in attracting multinational companies.} While the activities of these multinational corporations contribute significantly to Ireland's GDP through production and services rendered within the country, a large portion of the profits are repatriated to foreign investors or parent companies, thus not contributing to Ireland's GNI.
 
 \section{Conclusion \label{S_Conclusion}}
-In this paper, we study the impact of the EMU accession on the macroeconomic performance of the first twelve member states. We use the synthetic control method to construct a counterfactual of these countries' GDP. This method allows building a doppelganger that should represent the economic activity of these countries in the absence of the euro adoption. 
+In this paper, we study the impact of the euro adoption on the macroeconomic performance of the first twelve Eurozone members. We use the synthetic control method to construct a counterfactual of these countries' GDP. This method allows building a doppelganger that aims at representing the economic activity of these countries in the absence of the euro. 
 
-Our findings suggest that there are mild losers (France, Germany, Italy, and Portugal) and a clear winner (Ireland). Notwithstanding, the drivers of such estimates are heterogeneous.  First, Ireland's economic gains are more modest when excluding profits and income earned by foreigners, while the results remain unchanged for other countries. Second,  our GDP decomposition analysis indicates that for the majority of Eurozone countries, the euro spurred government consumption, while deterring investment and private consumption. The common currency also stimulated trade in most cases but only Germany, Luxembourg, and Ireland bear positive net trade benefits.  
+Our findings suggest that there are mild losers (France, Germany, Italy, and Portugal) and a clear winner (Ireland). Notwithstanding, the drivers of such estimates are heterogeneous. First, Ireland's economic gains are more modest when excluding profits and income earned by foreigners, while the results remain unchanged for other countries. Second, our GDP decomposition analysis indicates that for the majority of Eurozone countries, the euro spurred government consumption, while deterring investment and private consumption. The common currency also stimulated overall trade in the region, but only a few countries benefited from increased net exports.
 
-This evidence points out the importance of analyzing in detail the heterogeneous responses of GDP components and their implications. For example, given the different responses of investment and government consumption across member states, it is natural to ask if the effectiveness of national fiscal policies has changed. This could be especially interesting given that, with the common currency adoption, countries forgo important policy instruments.
+%This evidence highlights the importance of analyzing in detail the heterogeneous responses of GDP and its components across Eurozone countries. Given the different responses of investment and government consumption across member states, it is natural to ask if the effectiveness of national fiscal policies has changed after the euro adoption. This could be especially interesting because countries forgo important policy instruments when joining a currency union.
 
 
 %\section*{Declaration}
@@ -577,7 +565,7 @@ This evidence points out the importance of analyzing in detail the heterogeneous
  csh\_m & Imports of goods and services (\% of GDP) & World Bank \\ \hline
  gnipc &  Gross national income per capita & World Bank \\ \hline
  inflation & Inflation rate (\%), Counsumer Price Index of All Commodities& IMF IFS \\ \hline
- Bonds & Long-Term Government Bond Yields, Percent per annum & \cite{Arvai2023} \\ \hline
+ %Bonds & Long-Term Government Bond Yields, Percent per annum & \cite{Arvai2023} \\ \hline
  %unemp  & Unemployment Rate (\%)                    & World Bank \\ \hline
  
  \hline 
@@ -759,7 +747,7 @@ United States &        $<0.1$ &       $<0.1$ &     $<0.1$ &     6.2 &      22.1 
     \centering
     \caption{The Impact of the Eurozone Accession - Real GDP per capita}
     \label{F_rgdpnapc}
-    \includegraphics[width=\textwidth]{Output/Figures/images/SCM_normgdppc_Annual.pdf}
+    \includegraphics[width=\textwidth]{Output/Figures/SCM_normgdppc_s_Annual.pdf}
     \annote{In each graph, the dashed line represents the normalized real GDP per capita for the synthetic country and the continuous line represents the series for the actual country. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger before the euro accession. The vertical line represents the treatment period - 1999 for all countries except for Greece which is 2001. For each country, the analysis starts in 1970 and ends in 2007. }
     \label{F_normgdppc}
 \end{figure}
@@ -768,26 +756,48 @@ United States &        $<0.1$ &       $<0.1$ &     $<0.1$ &     6.2 &      22.1 
 \clearpage
 \begin{landscape}
 \subsection{RMSPE}
-\begin{table}[htbp]
+% \begin{table}[htbp]
+% \scriptsize
+% \caption{\label{TA_RMSPE} Relative RMSPE of the Pre- and Post-Treatment Doppelganger gaps.}\centering\medskip
+% \begin{tabular}{cccccccccccccccc|c} \toprule
+%                       & \textit{\textbf{AUS}} & \textit{\textbf{CAN}} & \textit{\textbf{CHL}} & \textit{\textbf{DNK}} & \textit{\textbf{ISL}} & \textit{\textbf{ISR}}  & \textit{\textbf{KOR}} & \textit{\textbf{MEX}} & \textit{\textbf{NZL}} & \textit{\textbf{NOR}} & \textit{\textbf{SWE}} & \textit{\textbf{CHE}} & \textit{\textbf{GBR}} & \textit{\textbf{USA}} & \textit{\textbf{Treated}} & \textit{\textbf{P-Value ($\rho$)}} \\ \midrule
+% \textit{\textbf{AUT}} & 2.98 & 5.00 & 2.85 & 4.50 & 1.73 & 1.25 & 2.93 & 4.35 & 3.10 & 7.64 & 4.41 & 3.24 & 1.16 & 3.97 & 3.20  & 0.533  \\
+% \textit{\textbf{BEL}} & 2.86 & 4.57 & 2.85 & 5.97 & 3.01 & 1.79 & 2.93 & 4.35 & 3.28 & 5.66 & 4.41 & 3.24 & 1.51 & 5.19 & 3.40  & 0.467 \\
+% \textit{\textbf{FIN}} & 2.61 & 5.28 & 2.85 & 4.42 & 2.89 & 1.25 & 2.93 & 4.35 & 3.30 & 7.65 & 3.64 & 3.24 & 1.33 & 3.88 & 1.78  & 0.867 \\
+% \textit{\textbf{FRA}} & 2.99 & 2.49 & 2.85 & 4.34 & 1.61 & 1.25 & 2.93 & 4.35 & 3.14 & 7.37 & 2.47 & 3.24 & 1.54 & 4.04 & 4.97  & \textbf{0.133} \\
+% \textit{\textbf{DEU}} & 2.80 & 4.74 & 2.85 & 4.98 & 2.88 & 1.25 & 2.93 & 4.35 & 3.30 & 7.65 & 4.40 & 3.24 & 1.22 & 2.86 & 5.98  & \textbf{0.133} \\
+% \textit{\textbf{GRC}} & 2.81 & 3.83 & 2.59 & 4.83 & 3.49 & 2.38 & 2.74 & 5.15 & 3.63 & 5.93 & 4.66 & 3.04 & 1.33 & 5.21 & 0.48  & 1.000\\
+% \textit{\textbf{IRL}} & 2.81 & 5.34 & 1.04 & 4.37 & 2.00 & 8.16 & 2.93 & 4.35 & 2.81 & 8.77 & 4.40 & 3.24 & 1.82 & 5.19 & 15.51 & \textbf{0.067} \\
+% \textit{\textbf{ITA}} & 1.95 & 3.65 & 2.85 & 4.82 & 1.82 & 1.25 & 2.93 & 3.52 & 3.16 & 7.65 & 4.40 & 3.24 & 1.17 & 5.38 & 7.88  & \textbf{0.067} \\
+% \textit{\textbf{LUX}} & 2.70 & 5.69 & 2.85 & 5.90 & 1.97 & 1.25 & 2.93 & 4.35 & 2.71 & 7.35 & 4.40 & 3.24 & 2.43 & 3.88 & 3.69  & 0.467  \\
+% \textit{\textbf{NLD}} & 2.95 & 5.74 & 2.85 & 7.06 & 2.56 & 1.25 & 2.93 & 4.35 & 2.55 & 7.45 & 4.41 & 3.24 & 1.61 & 3.87 & 1.79  & 0.867  \\
+% \textit{\textbf{PRT}} & 3.02 & 5.23 & 2.85 & 4.70 & 3.01 & 1.27 & 2.93 & 3.66 & 2.88 & 7.50 & 4.40 & 3.24 & 1.85 & 3.86 & 6.26  & \textbf{0.133} \\
+% \textit{\textbf{ESP}} & 1.95 & 4.84 & 2.85 & 4.81 & 1.77 & 1.25 & 2.93 & 4.35 & 3.24 & 7.65 & 4.40 & 3.24 & 1.77 & 3.92 & 1.45  & 0.933 \\
+% \bottomrule
+% \end{tabular} 
+% \annote{The column \textit{Treated} displays the RMSPE ratio for each country, $\chi$ in equation \ref{EQ_test}. The column \textit{P-Value} displays the chances of obtaining a ratio as high as the treated country if one were to pick a country at random from the sample including also the treated country (equivalent to $\rho$ in equation \ref{EQ_test2}). Given the small number of donor countries, we consider the results sizeable if there at most 2 countries with a higher RMSPE ratio.}
+% \end{table}
+
+\begin{table}[h!]
 \scriptsize
-\caption{\label{TA_RMSPE} Relative RMSPE of the Pre- and Post-Treatment Doppelganger gaps.}\centering\medskip
-\begin{tabular}{cccccccccccccccc|c} \toprule
-                      & \textit{\textbf{AUS}} & \textit{\textbf{CAN}} & \textit{\textbf{CHL}} & \textit{\textbf{DNK}} & \textit{\textbf{ISL}} & \textit{\textbf{ISR}}  & \textit{\textbf{KOR}} & \textit{\textbf{MEX}} & \textit{\textbf{NZL}} & \textit{\textbf{NOR}} & \textit{\textbf{SWE}} & \textit{\textbf{CHE}} & \textit{\textbf{GBR}} & \textit{\textbf{USA}} & \textit{\textbf{Treated}} & \textit{\textbf{P-Value ($\rho$)}} \\ \midrule
-\textit{\textbf{AUT}} & 2.98 & 5.00 & 2.85 & 4.50 & 1.73 & 1.25 & 2.93 & 4.35 & 3.10 & 7.64 & 4.41 & 3.24 & 1.16 & 3.97 & 3.20  & 0.533  \\
-\textit{\textbf{BEL}} & 2.86 & 4.57 & 2.85 & 5.97 & 3.01 & 1.79 & 2.93 & 4.35 & 3.28 & 5.66 & 4.41 & 3.24 & 1.51 & 5.19 & 3.40  & 0.467 \\
-\textit{\textbf{FIN}} & 2.61 & 5.28 & 2.85 & 4.42 & 2.89 & 1.25 & 2.93 & 4.35 & 3.30 & 7.65 & 3.64 & 3.24 & 1.33 & 3.88 & 1.78  & 0.867 \\
-\textit{\textbf{FRA}} & 2.99 & 2.49 & 2.85 & 4.34 & 1.61 & 1.25 & 2.93 & 4.35 & 3.14 & 7.37 & 2.47 & 3.24 & 1.54 & 4.04 & 4.97  & \textbf{0.133} \\
-\textit{\textbf{DEU}} & 2.80 & 4.74 & 2.85 & 4.98 & 2.88 & 1.25 & 2.93 & 4.35 & 3.30 & 7.65 & 4.40 & 3.24 & 1.22 & 2.86 & 5.98  & \textbf{0.133} \\
-\textit{\textbf{GRC}} & 2.81 & 3.83 & 2.59 & 4.83 & 3.49 & 2.38 & 2.74 & 5.15 & 3.63 & 5.93 & 4.66 & 3.04 & 1.33 & 5.21 & 0.48  & 1.000\\
-\textit{\textbf{IRL}} & 2.81 & 5.34 & 1.04 & 4.37 & 2.00 & 8.16 & 2.93 & 4.35 & 2.81 & 8.77 & 4.40 & 3.24 & 1.82 & 5.19 & 15.51 & \textbf{0.067} \\
-\textit{\textbf{ITA}} & 1.95 & 3.65 & 2.85 & 4.82 & 1.82 & 1.25 & 2.93 & 3.52 & 3.16 & 7.65 & 4.40 & 3.24 & 1.17 & 5.38 & 7.88  & \textbf{0.067} \\
-\textit{\textbf{LUX}} & 2.70 & 5.69 & 2.85 & 5.90 & 1.97 & 1.25 & 2.93 & 4.35 & 2.71 & 7.35 & 4.40 & 3.24 & 2.43 & 3.88 & 3.69  & 0.467  \\
-\textit{\textbf{NLD}} & 2.95 & 5.74 & 2.85 & 7.06 & 2.56 & 1.25 & 2.93 & 4.35 & 2.55 & 7.45 & 4.41 & 3.24 & 1.61 & 3.87 & 1.79  & 0.867  \\
-\textit{\textbf{PRT}} & 3.02 & 5.23 & 2.85 & 4.70 & 3.01 & 1.27 & 2.93 & 3.66 & 2.88 & 7.50 & 4.40 & 3.24 & 1.85 & 3.86 & 6.26  & \textbf{0.133} \\
-\textit{\textbf{ESP}} & 1.95 & 4.84 & 2.85 & 4.81 & 1.77 & 1.25 & 2.93 & 4.35 & 3.24 & 7.65 & 4.40 & 3.24 & 1.77 & 3.92 & 1.45  & 0.933 \\
+\caption{\label{TA_RMSPE_PRE} RMSPE of the Pre-Treatment Doppelganger gap}\centering
+\begin{tabular}{c|cccccccccccccc|c} \toprule
+                      & \textit{\textbf{AUS}} & \textit{\textbf{CAN}} & \textit{\textbf{CHL}} & \textit{\textbf{DNK}} & \textit{\textbf{ISL}} & \textit{\textbf{ISR}}  & \textit{\textbf{KOR}} & \textit{\textbf{MEX}} & \textit{\textbf{NZL}} & \textit{\textbf{NOR}} & \textit{\textbf{SWE}} & \textit{\textbf{CHE}} & \textit{\textbf{GBR}} & \textit{\textbf{USA}} & \textit{\textbf{Treated}} \\ \midrule
+\textit{\textbf{AUT}} & 0.02 & 0.02 & 0.34 & 0.03 & 0.13 & 0.12 & 3.26 & 0.11 & 0.06 & 0.03 & 0.03 & 0.11 & 0.02 & 0.01 & 0.03  \\
+\textit{\textbf{BEL}} & 0.02 & 0.02 & 0.34 & 0.03 & 0.16 & 0.10 & 3.26 & 0.11 & 0.06 & 0.03 & 0.03 & 0.11 & 0.02 & 0.01 & 0.04 \\
+\textit{\textbf{FIN}} & 0.01 & 0.02 & 0.34 & 0.03 & 0.13 & 0.10 & 3.26 & 0.11 & 0.06 & 0.03 & 0.03 & 0.11 & 0.02 & 0.01 & 0.04 \\
+\textit{\textbf{FRA}} & 0.02 & 0.02 & 0.34 & 0.03 & 0.16 & 0.09 & 3.26 & 0.11 & 0.06 & 0.03 & 0.03 & 0.11 & 0.02 & 0.01 & 0.03 \\
+\textit{\textbf{DEU}} & 0.02 & 0.02 & 0.34 & 0.03 & 0.15 & 0.09 & 3.26 & 0.11 & 0.06 & 0.03 & 0.04 & 0.11 & 0.02 & 0.02 & 0.03 \\
+\textit{\textbf{GRC}} & 0.02 & 0.02 & 0.24 & 0.02 & 0.13 & 0.11 & 3.68 & 0.10 & 0.06 & 0.04 & 0.03 & 0.13 & 0.02 & 0.02 & 0.09 \\
+\textit{\textbf{IRL}} & 0.01 & 0.02 & 0.24 & 0.03 & 0.15 & 0.08 & 3.26 & 0.11 & 0.06 & 0.04 & 0.03 & 0.11 & 0.02 & 0.01 & 0.08 \\
+\textit{\textbf{ITA}} & 0.02 & 0.02 & 0.24 & 0.03 & 0.13 & 0.12 & 3.26 & 0.11 & 0.06 & 0.03 & 0.04 & 0.11 & 0.02 & 0.01 & 0.04 \\
+\textit{\textbf{LUX}} & 0.01 & 0.02 & 0.34 & 0.03 & 0.19 & 0.10 & 3.26 & 0.11 & 0.06 & 0.03 & 0.03 & 0.11 & 0.02 & 0.01 & 0.07  \\
+\textit{\textbf{NLD}} & 0.02 & 0.02 & 0.34 & 0.03 & 0.13 & 0.09 & 3.26 & 0.11 & 0.06 & 0.03 & 0.03 & 0.11 & 0.02 & 0.02 & 0.04  \\
+\textit{\textbf{PRT}} & 0.01 & 0.02 & 0.24 & 0.03 & 0.13 & 0.10 & 3.26 & 0.11 & 0.06 & 0.03 & 0.03 & 0.11 & 0.02 & 0.02 & 0.06 \\
+\textit{\textbf{ESP}} & 0.02 & 0.02 & 0.24 & 0.03 & 0.13 & 0.10 & 3.26 & 0.11 & 0.06 & 0.03 & 0.04 & 0.11 & 0.02 & 0.02 & 0.06 \\
 \bottomrule
-\end{tabular} 
-\annote{The column \textit{Treated} displays the RMSPE ratio for each country, $\chi$ in equation \ref{EQ_test}. The column \textit{P-Value} displays the chances of obtaining a ratio as high as the treated country if one were to pick a country at random from the sample including also the treated country (equivalent to $\rho$ in equation \ref{EQ_test2}). Given the small number of donor countries, we consider the results sizeable if there at most 2 countries with a higher RMSPE ratio.}
+\end{tabular}
+\annote{This table presents the RMSPE for the pre-treatment period, a measure of the pre-treatment fit, and the denominator for the statistic presented in Table \ref{TA_RMSPE} of the draft: Relative RMSPE of the Pre- and Post-Treatment Doppelganger gaps.}
 \end{table}
 
 \end{landscape}
@@ -1123,7 +1133,20 @@ United States &       $<0.1$ &       $<0.1$ &       $<0.1$ &       15.5 &      3
 \end{tabular}
 \annote{This table presents the summary of the net exports decomposition into exports and imports for each treated country. It tells how much the net exports contributed to the doppelganger output gap in percent. }
 %For example, the Austrian GDP is 4.96\% smaller than of its doppelganger due to net exports. Even though exports contributed to an increase of 5.56\% of GDP, imports contributed to a decrease of about 10.52\% of GDP.
+\end{table}
 
+\begin{table}[h!]
+\scriptsize
+\caption{\label{TA_Gap_GNI} Doppelganger GNI Gap}\centering
+\begin{tabular}{lcccccccccccc} 
+\toprule
+ & \textbf{AUT}  & \textbf{BEL}  & \textbf{FIN}  & \textbf{FRA}  & \textbf{DEU}  & \textbf{GRC}  & \textbf{IRL}  & \textbf{ITA}  & \textbf{LUX}  & \textbf{NLD}  & \textbf{PRT}  & \textbf{ESP} \\
+ \midrule  
+\textbf{GNI Gap} & \multirow{2}{*}{-4,755} & \multirow{2}{*}{-1,379} & \multirow{2}{*}{1,467} & \multirow{2}{*}{-4,117} & \multirow{2}{*}{-4,838} & \multirow{2}{*}{--} & \multirow{2}{*}{2,965} & \multirow{2}{*}{-4,934} & \multirow{2}{*}{--} & \multirow{2}{*}{-1,821} & \multirow{2}{*}{-3,520} & \multirow{2}{*}{-242} \\
+(\texteuro \ per capita) &  &  &  &  &  & &  & &  & &  &  \\
+\bottomrule
+\end{tabular}
+\annote{This table presents the doppelganger gni gap per capita in 2007. This measure is obtained by adjusting the real GNI gap to 2011 Euros as we do in Table \ref{TA_Gap}. We use the conversion rate available from the PWT 9.1 for this year ($\approx 0.73$).}
 \end{table}
 
 \end{appendices}
