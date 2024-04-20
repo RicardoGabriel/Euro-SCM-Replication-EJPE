@@ -33,12 +33,12 @@
      linkcolor = black
 }
 
-\title{Adopting the Euro: a Synthetic Control Approach\footnote{We thank Benjamin Born, David Hope, Evi Pappa, Donghai Zhang, Laura Puzello, Martin Kornejew, Moritz Schularick, Pedro Gomis-Porqueras, Vitor Possebom as well as Paola Boel and the remaining research division members at the Sveriges Riksbank for their feedback and discussions. We likewise thank seminar participants at the University of Bonn and participants of the $13^{th}$ Annual Meeting of the Portuguese Economic Journal. We would like to thank the Sveriges Riksbank for hosting us while conducting part of the research that led to this paper. We acknowledge financial support from the Fundação para a Ciência e Tecnologia [projects references SFRH/BD/144581/2019 and SFRH/BD/144820/2019] the Deutsche Forschungsgemeinschaft (German Research Foundation) under Germany's Excellence Strategy [EXC 2126/1 - 390838866] and under the RTG 2281 - The Macroeconomics of Inequality. The views expressed herein are those of the author and should not be attributed to the Federal Reserve Board, or those affiliated with the Federal Reserve System.}}
+\title{Adopting the Euro: a Synthetic Control Approach\footnote{We thank the editor Jan-Egbert Sturm and 3 anonymous referees for their comments. We also thank Benjamin Born, David Hope, Evi Pappa, Donghai Zhang, Laura Puzello, Martin Kornejew, Moritz Schularick, Pedro Gomis-Porqueras, Vitor Possebom as well as Paola Boel and the remaining research division members at the Sveriges Riksbank for their feedback and discussions. We likewise thank seminar participants at the University of Bonn and participants of the $13^{th}$ Annual Meeting of the Portuguese Economic Journal. We would like to thank the Sveriges Riksbank for hosting us while conducting part of the research that led to this paper. We acknowledge financial support from the Fundação para a Ciência e Tecnologia [projects references SFRH/BD/144581/2019 and SFRH/BD/144820/2019] the Deutsche Forschungsgemeinschaft (German Research Foundation) under Germany's Excellence Strategy [EXC 2126/1 - 390838866] and under the RTG 2281 - The Macroeconomics of Inequality. The views expressed herein are those of the author and should not be attributed to the Federal Reserve Board, or those affiliated with the Federal Reserve System.}}
 
 
 
 \author{\hspace{-2em} Ricardo Duque Gabriel\footnote{Corresponding author: Federal Reserve Board. E-mail address: ricardofilipeduquegabriel@gmail.com} \hspace{5em} Ana Sofia Pessoa\footnote{University of Bonn. E-mail address: sofiamendespessoa@gmail.com}\\ \hspace{-1em} Federal Reserve Board \hspace{5em} University of Bonn}
-\date{January, 2024} 
+\date{April, 2024} 
 
 \begin{document}
 \begin{titlepage}
@@ -86,7 +86,7 @@ More recent work from \cite{Alesina2002} explains that forgoing monetary policy,
 
 There is also a broad literature that empirically tests these theoretical links. At about the time the euro was launched, \cite{Rose2000} famously estimated that a currency union could boost up to three times bilateral trade. The relevance of these results to the euro case was immediately doubted since the sample used for the analysis was based on unions of small, poor, and remote countries. \cite{Micco2003} developed the first comprehensive study for the impact of the European Monetary Union (EMU) on trade, concluding that the euro had a positive impact not only on trade between member states but also with third parties. Some papers have also highlighted the impact of currency unions on investment. Among others, \cite{Barr2003} suggest that inward investment in the countries outside the union would have been greater if they had joined the EMU. Furthermore, \cite{DeSousa2011} estimate that, in the Eurozone countries, investment increased with the single currency adoption.
 
-Finally, this paper closely relates to the recent literature about the euro adoption using the synthetic control approach \citep{Fernandez2015, Verstegen2017, Gasparotti2019} but makes three important contributions. First, we build directly on the work of \cite{Puzzello2018} by extending their analysis from six to the twelve member states that joined the Eurozone before 2007. This contributes to a comprehensive picture of the macroeconomic effects of the euro accession. 
+Finally, this paper closely relates to the recent literature about the euro adoption using the synthetic control approach \citep{Fernandez2015, Verstegen2017, Gasparotti2019} but makes three important contributions. First, we build directly on the work of \cite{Puzzello2018} by extending their analysis from six to the twelve member states that joined the Eurozone before 2007. This contributes to a comprehensive picture of the macroeconomic effects of the euro accession.\footnote{While we acknowledge the potential interest in studying the effects of Euro accession on other macroeconomic variables and especially inflation, limitations in the donor pool and pre-treatment period make such an analysis challenging and outside the scope of this paper.}
 
 Second, this paper further adds to the existing literature by unpacking the results of the economic gains and losses of the euro accession. In particular, our results show that, for the majority of Eurozone countries, adopting the euro deterred investment and private consumption, but spurred trade and government consumption. Moreover, there seems to be a negative link between fiscal spending before and after the euro adoption. Most countries in the sample implemented spending-based austerity measures after the Maastricht Treaty \citep{Alesina2019}. This has likely created fiscal space which together with access to cheaper credit promoted an increase in government consumption beyond what would have happened absent the euro adoption. %Italy and Portugal did consolidate spending after the euro accession, government consumption was lower than without the Euro.
 
@@ -121,7 +121,7 @@ Aiming to study the macroeconomic impact of the euro accession, we use real GDP 
 
 Moreover, the set of predictors used is based on \cite{Abadie2003} and \cite{Born2019}. These predictors are the average GDP shares of private consumption, government consumption, investment, exports, imports, the employed share of the population, the labor productivity growth, the inflation rate, the real GDP and its lags.\footnote{We avoid the so-called cherry-picking problem in \cite{Ferman2017} by choosing a standard set of predictors based on previous empirical literature.}
 
-Formally, let $\vec{x_1}$ denote the ($37 \times 1$) vector of $30$ observations for real GDP (including its 29 lags) and $8$ covariates' averages in each Eurozone country (over the pre-treatment period) and let $\vec{X_0}$ denote a ($38 \times 14$) matrix with observations from the donor countries. Finally, let $\vec{w}$ denote a ($14 \times 1$) vector of weights $w_i, \ i=2,...,15$. Then, the optimal weighting scheme is defined by $\vec{w^*}$ which minimizes the following mean squared error:
+Formally, let $\vec{x_1}$ denote the ($38 \times 1$) vector of $30$ observations for real GDP (including its 29 lags) and $8$ covariates' averages in each Eurozone country (over the pre-treatment period) and let $\vec{X_0}$ denote a ($38 \times 14$) matrix with observations from the donor countries. Finally, let $\vec{w}$ denote a ($14 \times 1$) vector of weights $w_i, \ i=2,...,15$. Then, the optimal weighting scheme is defined by $\vec{w^*}$ which minimizes the following mean squared error:
 
 \begin{equation}
     \label{EQ_min}
@@ -153,7 +153,7 @@ It is important to restrict the donor pool to units with outcomes that are expec
 
 % The minimum threshold should be using only advanced economies if we are studying an advanced economy.  That is, there should be similar levels in variables known to influence outcome variable - way to do so is by including those variables as predictors, another is to guarantee the similarity of studied countries (developed vs developing).
 
-Secondly, since the counterfactual weights are constructed according to the pre-intervention characteristics, we have to ensure that there are no (external) differentiated shocks during the study period in the donor pool countries \citep{Abadie2019}. To account for this, we only consider observations until 2007. From 2008 onward, the great financial recession and the European sovereign debt crisis affected countries in very different ways and might have caused structural changes in the affected economies. While before the great recession, there were no major differences in average economic growth, after 2008 treated units grew on average much slower than the donor pool countries. 
+Secondly, since the counterfactual weights are constructed according to the pre-intervention characteristics, we have to ensure that there are no (external) differentiated shocks during the study period in the donor pool countries \citep{Abadie2019}. To account for this, we only consider observations until 2007. From 2008 onward, the great financial crisis (GFC) and the European sovereign debt crisis affected countries in very different ways and might have caused structural changes in the affected economies. While before the great recession, there were no major differences in average economic growth, after 2008 treated units grew on average much slower than the donor pool countries.\footnote{Even though the impact of the GFC was heterogeneous across control and treatment groups, it is difficult to disentangle the reasons behind these differences. When extending the sample period until 2012, results remain broadly unchanged for most countries (Figure \ref{F_GFC} in appendix).} 
 
 It is also important to exclude any country that was treated from the donor pool. In this context, this is addressed by using only donor countries that never adopted the Euro. Yet, Denmark, Sweden, and the UK, which belonged to the European Union (EU) but did not adopt the Euro, are included in the donor sample. One important consideration is that, even though the euro adoption and the EU accession are intertwined, the cumulative gains of entering the EU stopped before 1999 for Denmark and the UK and are insignificant for Sweden \citep{Campos2018}. 
 
@@ -741,7 +741,7 @@ United States &        $<0.1$ &       $<0.1$ &     $<0.1$ &     6.2 &      22.1 
 \end{landscape}
 \clearpage
 
-\subsection{GDP per capita}
+\subsection{Other Results}
 
 \begin{figure}[h!]
     \centering
@@ -752,6 +752,13 @@ United States &        $<0.1$ &       $<0.1$ &     $<0.1$ &     6.2 &      22.1 
     \label{F_normgdppc}
 \end{figure}
 
+\begin{figure}[h!]
+    \centering
+    \caption{Extending the sample until 2012}
+    \label{F_GFC}
+    \includegraphics[width=\textwidth]{Output/Figures/SCM_gdp_2012_Annual.pdf}
+    \annote{In each graph, the dashed line represents the normalized real GDP for the synthetic country and the continuous line represents the series for the actual country. The shaded area corresponds to two standard deviations of the difference between the treated country and the doppelganger prior to the euro accession. The vertical line represents the treatment period - 1999 for all countries except for Greece which is 2001. For each country, the analysis starts in 1970 and ends in 2012.}
+\end{figure}
 
 \clearpage
 \begin{landscape}
